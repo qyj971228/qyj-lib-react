@@ -1,0 +1,50 @@
+button {
+  transition: all .2s; }
+
+.dashed {
+  border-style: dashed !important; }
+
+.primary, .primary-light {
+  border: solid 1px #558bff;
+  color: #558bff;
+  background-color: #fff; }
+
+.primary-light:hover {
+  color: #fff;
+  background-color: #558bff; }
+
+.primary-dark {
+  background-color: black; }
+  .primary-dark:hover {
+    color: #558bff;
+    background-color: #353535; }
+
+.warn, .warn-light {
+  border: solid 1px #f55;
+  color: #f55;
+  background-color: #fff; }
+
+.warn-light:hover {
+  color: #fff;
+  background-color: #f55; }
+
+.warn-dark {
+  background-color: black; }
+  .warn-dark:hover {
+    color: #f55;
+    background-color: #353535; }
+
+.s {
+  font-size: 8px;
+  padding: 4px 8px;
+  border-radius: 6px; }
+
+.m {
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 8px; }
+
+.l {
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 10px; }

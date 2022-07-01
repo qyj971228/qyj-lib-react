@@ -1,0 +1,73 @@
+button {
+  transition: all .2s;
+}
+
+$light: #fff;
+$dark: rgb(0, 0, 0);
+$dark-hover: rgb(53, 53, 53);
+$primary: rgb(85, 139, 255);
+$warn: #f55;
+$border-width: 1px;
+$solid: solid;
+$dashed: dashed;
+
+.dashed {
+  border-style: $dashed !important;
+}
+
+.primary {
+  border: $solid $border-width $primary;
+  color: $primary;
+  background-color: $light;
+}
+.primary-light {
+  @extend .primary;
+  &:hover {
+    color: $light;
+    background-color: $primary;
+  }
+}
+.primary-dark {
+  background-color: $dark;
+  &:hover {
+    color: $primary;
+    background-color: $dark-hover;
+  }
+}
+
+.warn {
+  border: $solid $border-width $warn;
+  color: $warn;
+  background-color: $light;
+}
+.warn-light {
+  @extend .warn;
+  &:hover {
+    color: $light;
+    background-color: $warn;
+  }
+}
+.warn-dark {
+  background-color: $dark;
+  &:hover {
+    color: $warn;
+    background-color: $dark-hover;
+  }
+}
+
+
+.s {
+  font-size: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.m {
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.l {
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
