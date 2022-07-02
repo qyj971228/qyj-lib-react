@@ -6,6 +6,7 @@ $warn: #f55;
 $border-width: 1px;
 $solid: solid;
 $dashed: dashed;
+$transition: all .2s;
 
 .q-btn {
   &-dashed {
@@ -13,7 +14,7 @@ $dashed: dashed;
   }
   
   &-transition {
-    transition: all .2s;
+    transition: $transition;
   }
   
   &-primary {
