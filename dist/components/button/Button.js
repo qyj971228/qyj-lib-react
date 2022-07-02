@@ -20,17 +20,25 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from '../theme/Theme';
 var Button = function (props) {
     var className = props.className, children = props.children, size = props.size, btype = props.btype, theme = props.theme, dashed = props.dashed, restProps = __rest(props, ["className", "children", "size", "btype", "theme", "dashed"]);
-    var finalClassName = "\n    ".concat(className !== null && className !== void 0 ? className : '', " ").concat(size, " ").concat(btype, " ").concat(btype, "-").concat(theme, " ").concat(dashed ? 'dashed' : '', "\n  ");
+    var themeProvide = useContext(ThemeContext);
+    var originClass = "".concat(className !== null && className !== void 0 ? className : '');
+    var sizeClass = "q-btn-".concat(size);
+    var typeClass = "q-btn-".concat(btype);
+    // if theme from com ? theme; else provide theme; default light
+    var themeClass = "q-btn-".concat(btype, "-").concat(theme || themeProvide || 'light');
+    console.log(themeClass);
+    var dashedClass = "q-btn-".concat(dashed ? 'dashed' : '');
+    var finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ');
     return (React.createElement("button", __assign({ className: finalClassName }, restProps), children));
 };
 Button.defaultProps = {
     disabled: false,
     btype: 'primary',
     size: 's',
-    theme: 'light',
     dashed: false
 };
 export default Button;

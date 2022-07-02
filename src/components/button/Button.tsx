@@ -32,7 +32,9 @@ const Button: FC<ButtonProps> = (props) => {
   const originClass = `${className ?? ''}`
   const sizeClass = `q-btn-${size}`
   const typeClass = `q-btn-${btype}`
-  const themeClass = `q-btn-${btype}-${theme || themeProvide}`
+  // if theme from com ? theme; else provide theme; default light
+  const themeClass = `q-btn-${btype}-${theme || themeProvide || 'light'}`  
+  console.log(themeClass)
   const dashedClass = `q-btn-${dashed ? 'dashed' : ''}`
   const finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ')
   return (
@@ -44,7 +46,6 @@ Button.defaultProps = {
   disabled: false,
   btype: 'primary',
   size: 's',
-  theme: 'light',
   dashed: false
 }
 

@@ -6,7 +6,7 @@ interface ThemeProps {
   theme?: theme
 }
 
-export const ThemeContext = React.createContext('light')
+export const ThemeContext = React.createContext('dark')
 
 const ThemeProvider: FC<ThemeProps> = ({children, theme}) => {
 

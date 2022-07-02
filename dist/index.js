@@ -8,9 +8,13 @@ export { default as ThemeProvider } from "./components/theme/Theme";
 // const root = createRoot(document.getElementById('root') as HTMLElement);
 // root.render(
 //   <StrictMode>
-//     <ThemeProvider theme='dark'>
-//       <Button size='m' btype='primary' dashed theme="dark">test</Button>
-//       <Button size='m' btype='warn'>test</Button>
+//     <ThemeProvider theme="light">
+//       <Button size='m' btype='primary' dashed>test</Button>
+//       <Button size='m' btype='warn' theme='dark'>test</Button>
+//     </ThemeProvider>
+//     <ThemeProvider theme="dark">
+//       <Button size='m' btype='primary' dashed>test</Button>
+//       <Button size='m' btype='warn' theme="light">test</Button>
 //     </ThemeProvider>
 //   </StrictMode>
 // );
