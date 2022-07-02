@@ -1,5 +1,5 @@
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode } from "react";
-import { theme } from '../theme/Theme'
+import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode, useContext } from "react";
+import { theme, ThemeContext } from '../theme/Theme'
 
 type buttonType = 'primary' | 'warn'
 type buttonSize = 's' | 'm' | 'l'
@@ -28,9 +28,13 @@ const Button: FC<ButtonProps> = (props) => {
     dashed,
     ...restProps 
   } = props
-  const finalClassName = `
-    ${className ?? ''} ${size} ${btype} ${btype}-${theme} ${dashed ? 'dashed' : ''}
-  `
+  const themeProvide =  useContext(ThemeContext)
+  const originClass = `${className ?? ''}`
+  const sizeClass = `q-btn-${size}`
+  const typeClass = `q-btn-${btype}`
+  const themeClass = `q-btn-${btype}-${theme || themeProvide}`
+  const dashedClass = `q-btn-${dashed ? 'dashed' : ''}`
+  const finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ')
   return (
     <button className={finalClassName} {...restProps}>{children}</button>
   )
