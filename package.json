@@ -1,6 +1,6 @@
 {
   "name": "qyj-lib-btn",
-  "version": "0.1.27",
+  "version": "0.1.29",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -20,19 +20,19 @@
     "start": "react-scripts start",
     "clean": "rimraf ./dist",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
-    "build": "npm run clean && npm run build-css && npm run build-ts"
+    "build-css-directory": "node-sass ./src -o ./dist --output-style compressed",
+    "build-css-directory-watch": "node-sass --watch ./src -o ./src --output-style expanded",
+    "build": "npm run clean && npm run build-css-directory && npm run build-ts && npm publish"
   },
-  "eslintConfig": {},
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.2",
+    "typescript": "^4.7.4"
+  },
   "browserslist": [
     "> 0.2%",
     "defaults ",
     "not IE 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "node-sass": "^7.0.1",
-    "sass-loader": "^13.0.2",
-    "typescript": "^4.7.4"
-  }
+  ]
 }

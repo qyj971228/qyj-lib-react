@@ -22,6 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React, { useContext } from "react";
 import { ThemeContext } from '../theme/Theme';
+import './button.css';
 var Button = function (props) {
     var className = props.className, children = props.children, size = props.size, btype = props.btype, theme = props.theme, dashed = props.dashed, restProps = __rest(props, ["className", "children", "size", "btype", "theme", "dashed"]);
     var themeProvide = useContext(ThemeContext);
@@ -30,7 +31,6 @@ var Button = function (props) {
     var typeClass = "q-btn-".concat(btype);
     // if theme from com ? theme; else provide theme; default light
     var themeClass = "q-btn-".concat(btype, "-").concat(theme || themeProvide || 'light');
-    console.log(themeClass);
     var dashedClass = "q-btn-".concat(dashed ? 'dashed' : '');
     var finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ');
     return (React.createElement("button", __assign({ className: finalClassName }, restProps), children));

@@ -1,5 +1,6 @@
 import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode, useContext } from "react";
 import { theme, ThemeContext } from '../theme/Theme'
+import './button.css'
 
 type buttonType = 'primary' | 'warn'
 type buttonSize = 's' | 'm' | 'l'
@@ -33,8 +34,7 @@ const Button: FC<ButtonProps> = (props) => {
   const sizeClass = `q-btn-${size}`
   const typeClass = `q-btn-${btype}`
   // if theme from com ? theme; else provide theme; default light
-  const themeClass = `q-btn-${btype}-${theme || themeProvide || 'light'}`  
-  console.log(themeClass)
+  const themeClass = `q-btn-${btype}-${theme || themeProvide || 'light'}`
   const dashedClass = `q-btn-${dashed ? 'dashed' : ''}`
   const finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ')
   return (

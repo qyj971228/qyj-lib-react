@@ -1,50 +1,65 @@
 .q-btn-dashed {
-  border-style: dashed; }
+  border-style: dashed;
+}
 
 .q-btn-transition, .q-btn-primary, .q-btn-primary-light {
-  transition: all .2s; }
+  transition: all 0.2s;
+}
 
 .q-btn-primary, .q-btn-primary-light {
   border: solid 1px #558bff;
   color: #558bff;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .q-btn-primary-light:hover {
   color: #fff;
-  background-color: #558bff; }
+  background-color: #558bff;
+}
 
 .q-btn-primary-dark {
-  background-color: black; }
-  .q-btn-primary-dark:hover {
-    color: #558bff;
-    background-color: #353535; }
+  background-color: black;
+}
+
+.q-btn-primary-dark:hover {
+  color: #558bff;
+  background-color: #353535;
+}
 
 .q-btn-warn, .q-btn-warn-light {
   border: solid 1px #f55;
   color: #f55;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .q-btn-warn-light:hover {
   color: #fff;
-  background-color: #f55; }
+  background-color: #f55;
+}
 
 .q-btn-warn-dark {
-  background-color: black; }
-  .q-btn-warn-dark:hover {
-    color: #f55;
-    background-color: #353535; }
+  background-color: black;
+}
+
+.q-btn-warn-dark:hover {
+  color: #f55;
+  background-color: #353535;
+}
 
 .q-btn-s {
   font-size: 8px;
   padding: 4px 8px;
-  border-radius: 6px; }
+  border-radius: 6px;
+}
 
 .q-btn-m {
   font-size: 16px;
   padding: 6px 10px;
-  border-radius: 8px; }
+  border-radius: 8px;
+}
 
 .q-btn-l {
   font-size: 24px;
   padding: 8px 12px;
-  border-radius: 10px; }
+  border-radius: 10px;
+}

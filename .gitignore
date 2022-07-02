@@ -3,8 +3,5 @@
 .env
 /.idea
 /.vscode
-/build
-/coverage
-/logs
+/dist
 /node_modules
-/src/config/ssl

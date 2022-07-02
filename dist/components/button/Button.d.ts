@@ -1,5 +1,6 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode } from "react";
 import { theme } from '../theme/Theme';
+import './button.css';
 declare type buttonType = 'primary' | 'warn';
 declare type buttonSize = 's' | 'm' | 'l';
 declare type dashed = true | false;
