@@ -16,11 +16,13 @@ interface buttonPropsBase {
 }
 
 type NativeButtonProps = buttonPropsBase & ButtonHTMLAttributes<HTMLElement>
-type AnchorButtonProps = buttonPropsBase & AnchorHTMLAttributes<HTMLElement>
 
-type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>  // Partial: 为所有属性追加 undefinded 类型
+type ButtonProps = Partial<NativeButtonProps>  // Partial: 为所有属性追加 undefinded 类型
 
 const Button: FC<ButtonProps> = (props) => {
+
+  const themeProvide =  useContext(ThemeContext)
+
   const { 
     className,
     children,
@@ -30,30 +32,19 @@ const Button: FC<ButtonProps> = (props) => {
     dashed,
     ...restProps 
   } = props
-  const themeProvide =  useContext(ThemeContext)
-  // const originClass = `${className ?? ''}`
-  // const sizeClass = `q-btn-size-${size}`
-  // const typeClass = `q-btn-type-${btype}`
-  // const themeClass = `q-btn-theme-${theme || themeProvide || 'light'}`
-  // const dashedClass = `q-btn-dashed-${dashed ? 'dashed' : ''}`
-  // const finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ')
+
   const customClass: {[key: string]: string} = {
     size: size || 'm',
     type: btype || 'primary',
     theme: theme || themeProvide || 'light',
     dashed: dashed ? 'dashed' : ''
   }
+
   const finalClassName = composeClassNames(className ?? '', 'q-btn', customClass)
+
   return (
     <button className={finalClassName} {...restProps}>{children}</button>
   )
-}
-
-Button.defaultProps = {
-  disabled: false,
-  btype: 'primary',
-  size: 's',
-  dashed: false
 }
 
 export default Button

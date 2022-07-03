@@ -1,8 +1,4 @@
 /* type */
-// theme
-$light: #fff;
-$dark: rgb(0, 0, 0);
-// type
 $primary: rgb(85, 139, 255);
 $warn: #f55;
 @mixin type($border-text-color) {
@@ -13,18 +9,12 @@ $warn: #f55;
   background-color: #fff;
   cursor: pointer;
 }
-@mixin type-primary {
-  @include type($primary);
-}
-@mixin type-warn {
-  @include type($warn);
-}
 .q-btn-type {
   &-primary {
-    @include type-primary;
+    @include type($primary);
   }
   &-warn {
-    @include type-warn;
+    @include type($warn);
   }
 }
 

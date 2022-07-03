@@ -1,6 +1,6 @@
 {
   "name": "qyj-lib",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -20,9 +20,11 @@
     "start": "react-scripts start",
     "clean": "rimraf ./dist",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css-directory": "node-sass ./src -o ./dist --output-style compressed",
-    "build-css-directory-watch": "node-sass --watch ./src -o ./src --output-style expanded",
-    "build": "npm run clean && npm run build-css-directory && npm run build-ts && npm publish"
+    "build-sass": "node-sass ./src -o ./dist --output-style compressed",
+    "watch-sass": "node-sass --watch ./src -o ./src --output-style expanded",
+    "init-sass": "node-sass ./src -o ./src --output-style expanded",
+    "init-watch-sass": "npm run init-sass && npm run watch-sass",
+    "build": "npm run clean && npm run build-sass && npm run build-ts && npm publish"
   },
   "devDependencies": {
     "node-sass": "^7.0.1",
