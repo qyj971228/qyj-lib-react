@@ -10,11 +10,11 @@ export { default as ThemeProvider } from "./components/theme/Theme";
 // root.render(
 //   <StrictMode>
 //     <ThemeProvider theme="light">
-//       <Button size='m' btype='primary' dashed>test</Button>
-//       <Button size='m' btype='warn' theme='dark'>test</Button>
+//       <Button btype='primary' dashed>test</Button>
+//       <Button size='s' btype='warn' theme='dark'>test</Button>
 //     </ThemeProvider>
 //     <ThemeProvider theme="dark">
-//       <Button size='m' btype='primary' dashed>test</Button>
+//       <Button size='l' btype='primary' dashed>test</Button>
 //       <Button size='m' btype='warn' theme="light">test</Button>
 //     </ThemeProvider>
 //   </StrictMode>

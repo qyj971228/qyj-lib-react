@@ -1,5 +1,6 @@
 import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode, useContext } from "react";
 import { theme, ThemeContext } from '../theme/Theme'
+import { composeClassNames } from '../utils/classCompose'
 import './button.css'
 
 type buttonType = 'primary' | 'warn'
@@ -30,13 +31,19 @@ const Button: FC<ButtonProps> = (props) => {
     ...restProps 
   } = props
   const themeProvide =  useContext(ThemeContext)
-  const originClass = `${className ?? ''}`
-  const sizeClass = `q-btn-${size}`
-  const typeClass = `q-btn-${btype}`
-  // if theme from com ? theme; else provide theme; default light
-  const themeClass = `q-btn-${btype}-${theme || themeProvide || 'light'}`
-  const dashedClass = `q-btn-${dashed ? 'dashed' : ''}`
-  const finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ')
+  // const originClass = `${className ?? ''}`
+  // const sizeClass = `q-btn-size-${size}`
+  // const typeClass = `q-btn-type-${btype}`
+  // const themeClass = `q-btn-theme-${theme || themeProvide || 'light'}`
+  // const dashedClass = `q-btn-dashed-${dashed ? 'dashed' : ''}`
+  // const finalClassName = [originClass, sizeClass, typeClass, themeClass, dashedClass].join(' ')
+  const customClass: {[key: string]: string} = {
+    size: size || 'm',
+    type: btype || 'primary',
+    theme: theme || themeProvide || 'light',
+    dashed: dashed ? 'dashed' : ''
+  }
+  const finalClassName = composeClassNames(className ?? '', 'q-btn', customClass)
   return (
     <button className={finalClassName} {...restProps}>{children}</button>
   )

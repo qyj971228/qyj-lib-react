@@ -1,65 +1,51 @@
-.q-btn-dashed {
-  border-style: dashed;
-}
-
-.q-btn-transition, .q-btn-primary, .q-btn-primary-light {
-  transition: all 0.2s;
-}
-
-.q-btn-primary, .q-btn-primary-light {
-  border: solid 1px #558bff;
+/* type */
+.q-btn-type-primary {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #558bff;
   color: #558bff;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.q-btn-type-warn {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f55;
+  color: #f55;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* theme */
+.q-btn-theme-light {
   background-color: #fff;
 }
 
-.q-btn-primary-light:hover {
-  color: #fff;
-  background-color: #558bff;
-}
-
-.q-btn-primary-dark {
+.q-btn-theme-dark {
   background-color: black;
 }
 
-.q-btn-primary-dark:hover {
-  color: #558bff;
-  background-color: #353535;
-}
-
-.q-btn-warn, .q-btn-warn-light {
-  border: solid 1px #f55;
-  color: #f55;
-  background-color: #fff;
-}
-
-.q-btn-warn-light:hover {
-  color: #fff;
-  background-color: #f55;
-}
-
-.q-btn-warn-dark {
-  background-color: black;
-}
-
-.q-btn-warn-dark:hover {
-  color: #f55;
-  background-color: #353535;
-}
-
-.q-btn-s {
-  font-size: 8px;
-  padding: 4px 8px;
+/* size */
+.q-btn-size-s {
+  font-size: 9px;
+  padding: 4.5px 7.5px;
   border-radius: 6px;
 }
 
-.q-btn-m {
-  font-size: 16px;
+.q-btn-size-m {
+  font-size: 12px;
   padding: 6px 10px;
   border-radius: 8px;
 }
 
-.q-btn-l {
-  font-size: 24px;
-  padding: 8px 12px;
+.q-btn-size-l {
+  font-size: 15px;
+  padding: 7.5px 12.5px;
   border-radius: 10px;
+}
+
+/* dashed */
+.q-btn-dashed-dashed {
+  border-style: dashed;
 }

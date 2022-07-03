@@ -3,15 +3,15 @@ export type theme = 'dark' | 'light'
 
 interface ThemeProps {
   children: ReactNode,
-  theme?: theme
+  theme: theme
 }
 
-export const ThemeContext = React.createContext('dark')
+export const ThemeContext = React.createContext('')
 
 const ThemeProvider: FC<ThemeProps> = ({children, theme}) => {
 
   return (
-    <ThemeContext.Provider value={theme || ''}>
+    <ThemeContext.Provider value={theme}>
       {children}
     </ThemeContext.Provider>
   )
@@ -26,10 +26,6 @@ const ThemeProvider: FC<ThemeProps> = ({children, theme}) => {
   //     }
   //   </div>
   // )
-}
-
-ThemeProvider.defaultProps = {
-  theme: 'light'
 }
 
 export default ThemeProvider;

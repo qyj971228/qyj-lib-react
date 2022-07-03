@@ -1,75 +1,71 @@
+/* type */
+// theme
 $light: #fff;
 $dark: rgb(0, 0, 0);
-$dark-hover: rgb(53, 53, 53);
+// type
 $primary: rgb(85, 139, 255);
 $warn: #f55;
-$border-width: 1px;
-$solid: solid;
-$dashed: dashed;
-$transition: all .2s;
-
-.q-btn {
-  &-dashed {
-    border-style: $dashed;
-  }
-  
-  &-transition {
-    transition: $transition;
-  }
-  
+@mixin type($border-text-color) {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $border-text-color;
+  color: $border-text-color;
+  background-color: #fff;
+  cursor: pointer;
+}
+@mixin type-primary {
+  @include type($primary);
+}
+@mixin type-warn {
+  @include type($warn);
+}
+.q-btn-type {
   &-primary {
-    @extend .q-btn-transition;
-    border: $solid $border-width $primary;
-    color: $primary;
-    background-color: $light;
+    @include type-primary;
   }
-  &-primary-light {
-    @extend .q-btn-primary;
-    &:hover {
-      color: $light;
-      background-color: $primary;
-    }
-  }
-  &-primary-dark {
-    background-color: $dark;
-    &:hover {
-      color: $primary;
-      background-color: $dark-hover;
-    }
-  }
-  
   &-warn {
-    border: $solid $border-width $warn;
-    color: $warn;
-    background-color: $light;
+    @include type-warn;
   }
-  &-warn-light {
-    @extend .q-btn-warn;
-    &:hover {
-      color: $light;
-      background-color: $warn;
-    }
+}
+
+/* theme */
+$light: #fff;
+$dark: rgb(0, 0, 0);
+@mixin theme($theme) {
+  background-color: $theme;
+}
+.q-btn-theme {
+  &-light {
+    @include theme($light);
   }
-  &-warn-dark {
-    background-color: $dark;
-    &:hover {
-      color: $warn;
-      background-color: $dark-hover;
-    }
+  &-dark {
+    @include theme($dark);
   }
+}
+
+/* size */
+$font: 12px;
+$padding-t-b: 6px;
+$padding-l-r: 10px;
+$radius: 8px;
+@mixin size($font, $padding-t-b, $padding-l-r, $radius) {
+  font-size: $font;
+  padding: $padding-t-b $padding-l-r;
+  border-radius: $radius;
+}
+.q-btn-size {
   &-s {
-    font-size: 8px;
-    padding: 4px 8px;
-    border-radius: 6px;
+    @include size($font * 0.75, $padding-t-b * 0.75, $padding-l-r * 0.75, $radius * 0.75);
   }
   &-m {
-    font-size: 16px;
-    padding: 6px 10px;
-    border-radius: 8px;
+    @include size($font, $padding-t-b, $padding-l-r, $radius);
   }
   &-l {
-    font-size: 24px;
-    padding: 8px 12px;
-    border-radius: 10px;
+    @include size($font * 1.25, $padding-t-b * 1.25, $padding-l-r * 1.25, $radius * 1.25);
   }
+}
+
+/* dashed */
+.q-btn-dashed-dashed {
+  border-style: dashed;
 }
