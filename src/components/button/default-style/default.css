@@ -1,0 +1,39 @@
+/* default */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
+.q-btn-default {
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.q-btn-default:hover {
+  color: #5583e7;
+  border-color: #5583e7;
+  outline: none;
+}
+
+.q-btn-default:focus {
+  color: #5583e7;
+  border-color: #5583e7;
+  outline: none;
+}
+
+.q-btn-default:active {
+  color: #4879e5;
+  border-color: #4879e5;
+}

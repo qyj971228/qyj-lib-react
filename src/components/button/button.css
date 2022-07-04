@@ -1,21 +1,85 @@
-/* type */
-/* type */
-.q-btn-type-primary {
-  border-style: solid;
+/* default */
+/* default */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
+.q-btn-default {
+  color: black;
   border-width: 1px;
-  border-color: #558bff;
-  color: #558bff;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: #000;
   background-color: #fff;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 10px;
+  padding-left: 10px;
   cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
 }
 
-.q-btn-type-warn {
-  border-style: solid;
-  border-width: 1px;
+.q-btn-default:hover {
+  color: #5583e7;
+  border-color: #5583e7;
+  outline: none;
+}
+
+.q-btn-default:focus {
+  color: #5583e7;
+  border-color: #5583e7;
+  outline: none;
+}
+
+.q-btn-default:active {
+  color: #4879e5;
+  border-color: #4879e5;
+}
+
+/* kind */
+/* kind */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
+.q-btn-kind-primary {
+  border-color: #5583e7;
+  background-color: #5583e7;
+  color: #fff;
+}
+
+.q-btn-kind-primary:hover, .q-btn-kind-primary:focus {
+  background-color: #628de9;
+  border-color: #628de9;
+  color: #fff;
+}
+
+.q-btn-kind-primary:active {
+  background-color: #4879e5;
+  border-color: #4879e5;
+  color: #fff;
+}
+
+.q-btn-kind-warn {
   border-color: #f55;
-  color: #f55;
-  background-color: #fff;
-  cursor: pointer;
+  background-color: #f55;
+  color: #fff;
+}
+
+.q-btn-kind-warn:hover, .q-btn-kind-warn:focus {
+  background-color: #ff6464;
+  border-color: #ff6464;
+  color: #fff;
+}
+
+.q-btn-kind-warn:active {
+  background-color: #ff4646;
+  border-color: #ff4646;
+  color: #fff;
 }
 
 /* theme */
@@ -30,26 +94,90 @@
 
 /* size */
 /* size */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
 .q-btn-size-s {
-  font-size: 9px;
-  padding: 4.5px 7.5px;
-  border-radius: 6px;
+  font-size: 7px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .q-btn-size-m {
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 8px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .q-btn-size-l {
-  font-size: 15px;
-  padding: 7.5px 12.5px;
-  border-radius: 10px;
+  font-size: 21px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 /* dashed */
 /* dashed */
-.q-btn-dashed-dashed {
+.q-btn-dashed {
   border-style: dashed;
+}
+
+/* round */
+/* round */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
+.q-btn-round {
+  border-radius: 40px;
+}
+
+/* wave */
+/* wave */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
+.q-btn-wave:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: #5583e7;
+  border-radius: inherit;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  animation-name: wave;
+  animation-duration: 1s;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: .2;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+  }
+  100% {
+    opacity: 0;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+  }
 }

@@ -1,50 +1,44 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, useContext } from "react";
-import { theme, ThemeContext } from '../theme/Theme'
+import React, { ButtonHTMLAttributes, FC, ReactNode} from "react";
 import { composeClassNames } from '../utils/classCompose'
 import './button.css'
 
 type buttonType = 'primary' | 'warn'
 type buttonSize = 's' | 'm' | 'l'
 type dashed = true | false
+type round = true | false
+type wave = true | false
 
 interface buttonPropsBase {
   children?: ReactNode,
-  btype?: buttonType,
+  kind?: buttonType,
   size?: buttonSize,
-  theme?: theme,
-  dashed?: dashed
+  dashed?: dashed,
+  round?: round,
+  wave?: wave,
+  showWave?: any
 }
 
 type NativeButtonProps = buttonPropsBase & ButtonHTMLAttributes<HTMLElement>
 
-type ButtonProps = Partial<NativeButtonProps>  // Partial: 为所有属性追加 undefined 类型
+export type ButtonProps = Partial<NativeButtonProps>
 
 const Button: FC<ButtonProps> = (props) => {
 
-  const themeProvide =  useContext(ThemeContext)
-
-  const { 
-    className,
-    children,
-    size,
-    btype,
-    theme,
-    dashed,
-    ...restProps 
-  } = props
-
-  const customClass: {[key: string]: string} = {
-    size: size || 'm',
-    type: btype || 'primary',
-    theme: theme || themeProvide || 'light',
-    dashed: dashed ? 'dashed' : ''
+  const { className, children, size, kind, dashed, round, wave, showWave, ...restProps } = props
+  const customClass: {[key: string]: string | boolean} = {
+    size: size ?? '',
+    kind: kind ?? '',
+    dashed: dashed === true,
+    round: round === true,
+    wave: wave === true
   }
 
   const finalClassName = composeClassNames(className ?? '', 'q-btn', customClass)
 
   return (
-    <button className={finalClassName} {...restProps}>{children}</button>
+    <button className={finalClassName} {...restProps} onMouseUp={() => showWave()}>{children}</button>
   )
+
 }
 
 export default Button

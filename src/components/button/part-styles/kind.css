@@ -1,0 +1,41 @@
+/* kind */
+/* kind */
+/* size */
+/* hover; focus; active */
+/* wave */
+/* round */
+.q-btn-kind-primary {
+  border-color: #5583e7;
+  background-color: #5583e7;
+  color: #fff;
+}
+
+.q-btn-kind-primary:hover, .q-btn-kind-primary:focus {
+  background-color: #628de9;
+  border-color: #628de9;
+  color: #fff;
+}
+
+.q-btn-kind-primary:active {
+  background-color: #4879e5;
+  border-color: #4879e5;
+  color: #fff;
+}
+
+.q-btn-kind-warn {
+  border-color: #f55;
+  background-color: #f55;
+  color: #fff;
+}
+
+.q-btn-kind-warn:hover, .q-btn-kind-warn:focus {
+  background-color: #ff6464;
+  border-color: #ff6464;
+  color: #fff;
+}
+
+.q-btn-kind-warn:active {
+  background-color: #ff4646;
+  border-color: #ff4646;
+  color: #fff;
+}

@@ -1,0 +1,39 @@
+/* wave */
+@import '../var-styles/var.scss';
+.q-btn {
+  &-wave {
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background-color: $primary;
+      border-radius: inherit;
+      opacity: 0;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      animation-name: wave;
+      animation-duration: 1s;
+    }
+    @keyframes wave {
+      0% {
+        opacity: 0;
+      }
+      30% {
+        opacity: .2;
+        top: $wave-size;
+        left: $wave-size;
+        right: $wave-size;
+        bottom: $wave-size;
+      }
+      100% {
+        opacity: 0;
+        top: $wave-size;
+        left: $wave-size;
+        right: $wave-size;
+        bottom: $wave-size;
+      }
+    }
+  }
+}

@@ -1,21 +1,20 @@
 /* size */
-$font: 12px;
-$padding-t-b: 6px;
-$padding-l-r: 10px;
-$radius: 8px;
-@mixin size($font, $padding-t-b, $padding-l-r, $radius) {
-  font-size: $font;
-  padding: $padding-t-b $padding-l-r;
-  border-radius: $radius;
+@import '../var-styles/var.scss';
+@mixin size($size) {
+  font-size: $q-btn-font-size * $size;
+  padding-top: $q-btn-padding-longitudinal * $size;
+  padding-bottom: $q-btn-padding-longitudinal * $size;
+  padding-right: $q-btn-padding-widthwise * $size;
+  padding-left: $q-btn-padding-widthwise * $size;
 }
 .q-btn-size {
   &-s {
-    @include size($font * 0.75, $padding-t-b * 0.75, $padding-l-r * 0.75, $radius * 0.75);
+    @include size($s);
   }
   &-m {
-    @include size($font, $padding-t-b, $padding-l-r, $radius);
+    @include size($m);
   }
   &-l {
-    @include size($font * 1.25, $padding-t-b * 1.25, $padding-l-r * 1.25, $radius * 1.25);
+    @include size($l);
   }
 }

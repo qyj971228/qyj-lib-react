@@ -1,5 +1,8 @@
-/* type */
-@import './part-styles/type.scss';
+/* default */
+@import './default-style/default.scss';
+
+/* kind */
+@import './part-styles/kind.scss';
 
 /* theme */
 @import './part-styles/theme.scss';
@@ -9,3 +12,9 @@
 
 /* dashed */
 @import './part-styles/dashed.scss';
+
+/* round */
+@import './part-styles/round.scss';
+
+/* wave */
+@import './part-styles/wave.scss';

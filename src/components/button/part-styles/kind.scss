@@ -1,0 +1,27 @@
+/* kind */
+@import '../var-styles/var.scss';
+
+@mixin type($type-color) {
+  border-color: $type-color;
+  background-color: $type-color;
+  color: #fff;
+  &:hover, &:focus {
+    background-color: lighten($type-color, $lighten);
+    border-color: lighten($type-color, $lighten);
+    color: #fff;
+  }
+  &:active {
+    background-color: darken($type-color, $darken);
+    border-color: darken($type-color, $darken);
+    color: #fff;
+  }
+}
+
+.q-btn-kind {
+  &-primary {
+    @include type($primary);
+  }
+  &-warn {
+    @include type($warn);
+  }
+}

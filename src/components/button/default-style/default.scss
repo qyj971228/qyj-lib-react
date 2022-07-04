@@ -1,0 +1,37 @@
+/* default */
+@import '../var-styles/var.scss';
+
+.q-btn {
+  &-default {
+    color: black;
+    border-width: $q-btn-border-width;
+    border-style: $q-btn-border-style;
+    border-radius: $q-btn-border-radius;
+    border-color: $q-btn-border-color;
+    background-color: $q-btn-background-color;
+    font-size: $q-btn-font-size;
+    padding-top: $q-btn-padding-longitudinal;
+    padding-bottom: $q-btn-padding-longitudinal;
+    padding-right: $q-btn-padding-widthwise;
+    padding-left: $q-btn-padding-widthwise;
+    cursor: $q-btn-cursor;
+    transition: $q-btn-transition;
+    position: relative;
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+      outline: none;
+    }
+    &:focus {
+      color: $primary;
+      border-color: $primary;
+      outline: none;
+    }
+    &:active {
+      color: darken($primary, $darken);
+      border-color: darken($primary, $darken);
+    }
+  }
+}
+
+
