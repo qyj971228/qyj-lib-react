@@ -1,0 +1,18 @@
+/* type */
+.q-btn-type-primary {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #558bff;
+  color: #558bff;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.q-btn-type-warn {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f55;
+  color: #f55;
+  background-color: #fff;
+  cursor: pointer;
+}

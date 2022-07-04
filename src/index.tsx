@@ -12,7 +12,16 @@ export { default as ThemeProvider } from "./components/theme/Theme";
 //     <ThemeProvider theme="light">
 //       <Button btype='primary' dashed>test</Button>
 //       <Button size='s' btype='warn' theme='dark'>test</Button>
+//       <ThemeProvider theme="dark">
+//         <Button size='l' btype='primary' dashed>test</Button>
+//         <Button size='m' btype='warn' theme="light">test</Button>
+//       </ThemeProvider>
+//       <ThemeProvider theme="light">
+//         <Button size='l' btype='primary' dashed>test</Button>
+//         <Button size='m' btype='warn' theme="light">test</Button>
+//       </ThemeProvider>
 //     </ThemeProvider>
+//     <br />
 //     <ThemeProvider theme="dark">
 //       <Button size='l' btype='primary' dashed>test</Button>
 //       <Button size='m' btype='warn' theme="light">test</Button>

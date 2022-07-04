@@ -1,61 +1,11 @@
 /* type */
-$primary: rgb(85, 139, 255);
-$warn: #f55;
-@mixin type($border-text-color) {
-  border-style: solid;
-  border-width: 1px;
-  border-color: $border-text-color;
-  color: $border-text-color;
-  background-color: #fff;
-  cursor: pointer;
-}
-.q-btn-type {
-  &-primary {
-    @include type($primary);
-  }
-  &-warn {
-    @include type($warn);
-  }
-}
+@import './part-styles/type.scss';
 
 /* theme */
-$light: #fff;
-$dark: rgb(0, 0, 0);
-@mixin theme($theme) {
-  background-color: $theme;
-}
-.q-btn-theme {
-  &-light {
-    @include theme($light);
-  }
-  &-dark {
-    @include theme($dark);
-  }
-}
+@import './part-styles/theme.scss';
 
 /* size */
-$font: 12px;
-$padding-t-b: 6px;
-$padding-l-r: 10px;
-$radius: 8px;
-@mixin size($font, $padding-t-b, $padding-l-r, $radius) {
-  font-size: $font;
-  padding: $padding-t-b $padding-l-r;
-  border-radius: $radius;
-}
-.q-btn-size {
-  &-s {
-    @include size($font * 0.75, $padding-t-b * 0.75, $padding-l-r * 0.75, $radius * 0.75);
-  }
-  &-m {
-    @include size($font, $padding-t-b, $padding-l-r, $radius);
-  }
-  &-l {
-    @include size($font * 1.25, $padding-t-b * 1.25, $padding-l-r * 1.25, $radius * 1.25);
-  }
-}
+@import './part-styles/size.scss';
 
 /* dashed */
-.q-btn-dashed-dashed {
-  border-style: dashed;
-}
+@import './part-styles/dashed.scss';

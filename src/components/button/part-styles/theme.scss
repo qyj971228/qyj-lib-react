@@ -1,0 +1,14 @@
+/* theme */
+$light: #fff;
+$dark: rgb(0, 0, 0);
+@mixin theme($theme) {
+  background-color: $theme;
+}
+.q-btn-theme {
+  &-light {
+    @include theme($light);
+  }
+  &-dark {
+    @include theme($dark);
+  }
+}

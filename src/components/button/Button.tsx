@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode, useContext } from "react";
+import React, { ButtonHTMLAttributes, FC, ReactNode, useContext } from "react";
 import { theme, ThemeContext } from '../theme/Theme'
 import { composeClassNames } from '../utils/classCompose'
 import './button.css'
@@ -17,7 +17,7 @@ interface buttonPropsBase {
 
 type NativeButtonProps = buttonPropsBase & ButtonHTMLAttributes<HTMLElement>
 
-type ButtonProps = Partial<NativeButtonProps>  // Partial: 为所有属性追加 undefinded 类型
+type ButtonProps = Partial<NativeButtonProps>  // Partial: 为所有属性追加 undefined 类型
 
 const Button: FC<ButtonProps> = (props) => {
 

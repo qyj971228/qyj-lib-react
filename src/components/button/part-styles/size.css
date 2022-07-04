@@ -1,0 +1,18 @@
+/* size */
+.q-btn-size-s {
+  font-size: 9px;
+  padding: 4.5px 7.5px;
+  border-radius: 6px;
+}
+
+.q-btn-size-m {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.q-btn-size-l {
+  font-size: 15px;
+  padding: 7.5px 12.5px;
+  border-radius: 10px;
+}
