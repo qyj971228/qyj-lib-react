@@ -1,4 +1,3 @@
-/* size */
 @import '../var-styles/var.scss';
 @mixin size($size) {
   font-size: $q-btn-font-size * $size;

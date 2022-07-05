@@ -25,9 +25,9 @@ const Wave: FC<WaveProps> = (props) => {
     <>
       {
         React.Children.map(children, (child) => {
-          if (!React.isValidElement(child)) return null  // 判断children是否是节点元素
-          const childProps = {...child.props, wave, showWave}  // 生成props
-          return React.cloneElement(child, childProps)  // 为新节点追加props 
+          if (!React.isValidElement(child)) return null  // is children element
+          const childProps = {...child.props, wave, showWave}  // compose new props
+          return React.cloneElement(child, childProps)  // create new element
         })
       }
     </>

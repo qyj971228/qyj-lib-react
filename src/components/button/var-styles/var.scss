@@ -5,26 +5,22 @@ $q-btn-border-radius: 2px;
 $q-btn-border-style: solid;
 $q-btn-border-color: #000;
 $q-btn-background-color: #fff;
-$q-btn-padding-longitudinal: 4px;
+$q-btn-padding-longitudinal: 5px;
 $q-btn-padding-widthwise: 10px;
 $q-btn-cursor: pointer;
 $q-btn-transition: all .2s;
 
-/* kind */
-$primary: rgb(85, 131, 231);
-$warn: #f55;
+$primary: #2080f0;
+$warn: #f0a020;
+$error: #d03050;
 
-/* size */
 $s: 0.5;
 $m: 1;
 $l: 1.5;
 
-/* hover; focus; active */
-$darken: 3%;
-$lighten: 3%;
+$darken: 5%;
+$lighten: 5%;
 
-/* wave */
 $wave-size: -3px;
 
-/* round */
 $round: 40px;

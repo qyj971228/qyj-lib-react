@@ -1,29 +1,23 @@
-/* size */
-/* kind */
-/* size */
-/* hover; focus; active */
-/* wave */
-/* round */
 .q-btn-size-s {
   font-size: 7px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
   padding-right: 5px;
   padding-left: 5px;
 }
 
 .q-btn-size-m {
   font-size: 14px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-right: 10px;
   padding-left: 10px;
 }
 
 .q-btn-size-l {
   font-size: 21px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
   padding-right: 15px;
   padding-left: 15px;
 }

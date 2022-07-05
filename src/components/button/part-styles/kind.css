@@ -1,41 +1,107 @@
-/* kind */
-/* kind */
-/* size */
-/* hover; focus; active */
-/* wave */
-/* round */
 .q-btn-kind-primary {
-  border-color: #5583e7;
-  background-color: #5583e7;
+  border-color: #2080f0;
+  background-color: #2080f0;
   color: #fff;
 }
 
 .q-btn-kind-primary:hover, .q-btn-kind-primary:focus {
-  background-color: #628de9;
-  border-color: #628de9;
+  background-color: #388ef2;
+  border-color: #388ef2;
   color: #fff;
 }
 
 .q-btn-kind-primary:active {
-  background-color: #4879e5;
-  border-color: #4879e5;
+  background-color: #1073e7;
+  border-color: #1073e7;
   color: #fff;
 }
 
+.q-btn-kind-primary-simple {
+  border-color: #2080f0;
+  background-color: #fff;
+  color: #2080f0;
+}
+
+.q-btn-kind-primary-simple:hover, .q-btn-kind-primary-simple:focus {
+  background-color: white;
+  border-color: #388ef2;
+  color: #2080f0;
+}
+
+.q-btn-kind-primary-simple:active {
+  background-color: #f2f2f2;
+  border-color: #1073e7;
+  color: #2080f0;
+}
+
 .q-btn-kind-warn {
-  border-color: #f55;
-  background-color: #f55;
+  border-color: #f0a020;
+  background-color: #f0a020;
   color: #fff;
 }
 
 .q-btn-kind-warn:hover, .q-btn-kind-warn:focus {
-  background-color: #ff6464;
-  border-color: #ff6464;
+  background-color: #f2aa38;
+  border-color: #f2aa38;
   color: #fff;
 }
 
 .q-btn-kind-warn:active {
-  background-color: #ff4646;
-  border-color: #ff4646;
+  background-color: #e79410;
+  border-color: #e79410;
   color: #fff;
+}
+
+.q-btn-kind-warn-simple {
+  border-color: #f0a020;
+  background-color: #fff;
+  color: #f0a020;
+}
+
+.q-btn-kind-warn-simple:hover, .q-btn-kind-warn-simple:focus {
+  background-color: white;
+  border-color: #f2aa38;
+  color: #f0a020;
+}
+
+.q-btn-kind-warn-simple:active {
+  background-color: #f2f2f2;
+  border-color: #e79410;
+  color: #f0a020;
+}
+
+.q-btn-kind-error {
+  border-color: #d03050;
+  background-color: #d03050;
+  color: #fff;
+}
+
+.q-btn-kind-error:hover, .q-btn-kind-error:focus {
+  background-color: #d54562;
+  border-color: #d54562;
+  color: #fff;
+}
+
+.q-btn-kind-error:active {
+  background-color: #bc2b48;
+  border-color: #bc2b48;
+  color: #fff;
+}
+
+.q-btn-kind-error-simple {
+  border-color: #d03050;
+  background-color: #fff;
+  color: #d03050;
+}
+
+.q-btn-kind-error-simple:hover, .q-btn-kind-error-simple:focus {
+  background-color: white;
+  border-color: #d54562;
+  color: #d03050;
+}
+
+.q-btn-kind-error-simple:active {
+  background-color: #f2f2f2;
+  border-color: #bc2b48;
+  color: #d03050;
 }

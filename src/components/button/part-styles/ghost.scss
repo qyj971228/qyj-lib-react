@@ -1,0 +1,34 @@
+@import '../var-styles/var.scss';
+
+@mixin ghost($type-color) {
+  border-color: $type-color;
+  background-color: transparent;
+  color: $type-color;
+  &:hover, &:focus {
+    background-color: transparent;
+    border-color: lighten($type-color, $lighten);
+    color: lighten($type-color, $lighten);
+  }
+  &:active {
+    background-color: transparent;
+    border-color: darken($type-color, $darken);
+    color: darken($type-color, $darken);
+  }
+}
+
+.q-btn-ghost {
+  &-primary {
+    @include ghost($primary);
+  }
+  &-warn {
+    @include ghost($warn);
+  }
+  &-error {
+    @include ghost($error);
+  }
+  &-default {
+    border-color: #000;
+    background-color: transparent;
+    color: #000;
+  }
+}

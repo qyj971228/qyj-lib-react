@@ -1,20 +1,17 @@
-/* default */
 @import './default-style/default.scss';
 
-/* kind */
 @import './part-styles/kind.scss';
 
-/* theme */
 @import './part-styles/theme.scss';
 
-/* size */
 @import './part-styles/size.scss';
 
-/* dashed */
 @import './part-styles/dashed.scss';
 
-/* round */
 @import './part-styles/round.scss';
 
-/* wave */
 @import './part-styles/wave.scss';
+
+@import './part-styles/ghost.scss';
+
+@import './part-styles/color.scss';

@@ -1,0 +1,59 @@
+.q-btn-ghost-primary {
+  border-color: #2080f0;
+  background-color: transparent;
+  color: #2080f0;
+}
+
+.q-btn-ghost-primary:hover, .q-btn-ghost-primary:focus {
+  background-color: transparent;
+  border-color: #388ef2;
+  color: #388ef2;
+}
+
+.q-btn-ghost-primary:active {
+  background-color: transparent;
+  border-color: #1073e7;
+  color: #1073e7;
+}
+
+.q-btn-ghost-warn {
+  border-color: #f0a020;
+  background-color: transparent;
+  color: #f0a020;
+}
+
+.q-btn-ghost-warn:hover, .q-btn-ghost-warn:focus {
+  background-color: transparent;
+  border-color: #f2aa38;
+  color: #f2aa38;
+}
+
+.q-btn-ghost-warn:active {
+  background-color: transparent;
+  border-color: #e79410;
+  color: #e79410;
+}
+
+.q-btn-ghost-error {
+  border-color: #d03050;
+  background-color: transparent;
+  color: #d03050;
+}
+
+.q-btn-ghost-error:hover, .q-btn-ghost-error:focus {
+  background-color: transparent;
+  border-color: #d54562;
+  color: #d54562;
+}
+
+.q-btn-ghost-error:active {
+  background-color: transparent;
+  border-color: #bc2b48;
+  color: #bc2b48;
+}
+
+.q-btn-ghost-default {
+  border-color: #000;
+  background-color: transparent;
+  color: #000;
+}

@@ -1,7 +1,6 @@
-/* kind */
 @import '../var-styles/var.scss';
 
-@mixin type($type-color) {
+@mixin kind($type-color) {
   border-color: $type-color;
   background-color: $type-color;
   color: #fff;
@@ -17,11 +16,39 @@
   }
 }
 
+@mixin kind-simple($type-color) {
+  border-color: $type-color;
+  background-color: #fff;
+  color: $type-color;
+  &:hover, &:focus {
+    background-color: lighten(#fff, $lighten);
+    border-color: lighten($type-color, $lighten);
+    color: $type-color;
+  }
+  &:active {
+    background-color: darken(#fff, $darken);
+    border-color: darken($type-color, $darken);
+    color: $type-color;
+  }
+}
+
 .q-btn-kind {
   &-primary {
-    @include type($primary);
+    @include kind($primary);
+    &-simple {
+      @include kind-simple($primary);
+    }
   }
   &-warn {
-    @include type($warn);
+    @include kind($warn);
+    &-simple {
+      @include kind-simple($warn);
+    }
+  }
+  &-error {
+    @include kind($error);
+    &-simple {
+      @include kind-simple($error);
+    }
   }
 }

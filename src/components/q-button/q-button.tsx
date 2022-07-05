@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import Button from './../button/Button';
-import Wave from './../wave/wave';
+// import Wave from './../wave/wave';
 import { ButtonProps } from "./../button/Button";
 
 const QButton: FC<ButtonProps> = (props) => {
@@ -9,9 +9,9 @@ const QButton: FC<ButtonProps> = (props) => {
   
   return (
     <>
-      <Wave>
+      {/* <Wave> */}
         <Button {...restProps}>{children}</Button>
-      </Wave>
+      {/* </Wave> */}
     </>
   )
   
