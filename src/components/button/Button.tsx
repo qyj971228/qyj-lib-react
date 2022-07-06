@@ -43,10 +43,23 @@ const Button: FC<ButtonProps> = (props) => {
     }
   )
 
+  function getCustomColor() {
+    if (dashed) return color
+    if (kind) return '#fff'
+    return color
+  }
+
+  function getCustomBackgroundColor() {
+    if (ghost) return 'transparent'
+    if (dashed) return '#fff'
+    if (kind) return color
+    return '#fff'
+  }
+
   const customColorStyle = {  // from props.color
     borderColor: color,
-    color: kind ? '#fff' : color,
-    backgroundColor: kind ? color : ghost ? 'transparent' : '#fff',
+    color: getCustomColor(),
+    backgroundColor: getCustomBackgroundColor()
   }
 
   const finalStyle = color ? {...customColorStyle, ...style} : {...style}  // props.style is higher priority than props.color

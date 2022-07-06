@@ -40,8 +40,12 @@ root.render(
       <QButton style={style} kind='warn' size="m">m</QButton>
       <QButton style={style} kind='error' size="l">l</QButton>
       <br />
-      <QButton style={style} kind='primary' color='#8a2be2' wave>#8a2be2 wave</QButton>
-      <QButton style={style} kind='primary' color='#8a2be2' round wave>#8a2be2 wave</QButton>
+      <QButton style={style} kind='primary' color='#8a2be2'>#8a2be2</QButton>
+      <QButton style={style} kind='primary' color='#8a2be2' round>#8a2be2</QButton>
+      <QButton style={style} kind='primary' color='#8a2be2' dashed>#8a2be2</QButton>
+      <QButton style={style} kind='primary' color='#8a2be2' round dashed>#8a2be2</QButton>
+      <QButton style={style} kind='primary' color='#8a2be2' dashed ghost>#8a2be2</QButton>
+      <QButton style={style} kind='primary' color='#8a2be2' round dashed ghost>#8a2be2</QButton>
       <br />
       <QButton style={style} color='#8a2be2'>#8a2be2</QButton>
       <QButton style={style} color='#8a2be2' round >#8a2be2</QButton>
