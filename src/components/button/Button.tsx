@@ -12,10 +12,11 @@ interface buttonPropsBase {
   dashed?: boolean,
   round?: boolean,
   wave?: boolean,
-  // showWave?: any,
   color?: string,
   ghost?: boolean,
   simple?: boolean,
+  showWave?: Function,
+  mouseUp?: Function
 }
 
 type NativeButtonProps = buttonPropsBase & ButtonHTMLAttributes<HTMLElement>
@@ -24,25 +25,25 @@ export type ButtonProps = Partial<NativeButtonProps>
 
 const Button: FC<ButtonProps> = (props) => {
 
-  const { className, children, size, kind, dashed, round, wave, 
-    // showWave,
-  color, style, ghost, simple, ...restProps } = props
+  const componentPrefix = 'q-btn'
+
+  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, showWave, onMouseUp, ...restProps } = props
 
   const finalClassName = composeClassNames(
     className, 
-    'q-btn', 
+    componentPrefix, 
     {
-      size: size,  // [size] | nothing
-      kind: simple ? kind + '-simple' : kind,  // [kind] | nothing
-      dashed: dashed,  // dashed | nothing
-      round: round,  // round | nothing
-      wave: wave,  // wave | nothing
-      ghost: ghost ? kind ? kind : 'default' : '', // ghost-[kind] | nothing
-      color: color ? true : false
+      size: size,  // q-btn-[size]
+      kind: simple ? kind + '-simple' : kind,  // q-btn-[kind] | q-btn-[kind-simple]
+      dashed: dashed,  // q-btn-dashed
+      round: round,  // q-btn-round
+      wave: wave,  // q-btn-wave
+      ghost: ghost ? kind ? kind : 'default' : '', // q-btn-ghost-[kind]
+      color: color ? true : false  // q-btn-color
     }
   )
 
-  const customColorStyle = {
+  const customColorStyle = {  // from props.color
     borderColor: color,
     color: kind ? '#fff' : color,
     backgroundColor: kind ? color : ghost ? 'transparent' : '#fff',
@@ -52,10 +53,15 @@ const Button: FC<ButtonProps> = (props) => {
 
   return (
     <button 
-      className={finalClassName}
       {...restProps}
-      style={{...finalStyle}}  
-      // onMouseUp={() => showWave()}
+      className={finalClassName}
+      style={{...finalStyle}}
+      onMouseUp={
+        (e) => {
+          onMouseUp && onMouseUp(e)
+          showWave && showWave()
+        }
+      }
     >
       {children}
     </button>

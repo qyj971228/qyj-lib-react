@@ -25,7 +25,7 @@ const Wave: FC<WaveProps> = (props) => {
     <>
       {
         React.Children.map(children, (child) => {
-          if (!React.isValidElement(child)) return null  // is children element
+          if (!React.isValidElement(child)) return null  // children is element
           const childProps = {...child.props, wave, showWave}  // compose new props
           return React.cloneElement(child, childProps)  // create new element
         })

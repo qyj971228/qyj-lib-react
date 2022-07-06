@@ -3,14 +3,11 @@
 @mixin wave {
   content: "";
   position: absolute;
-  z-index: -1;
-  box-sizing: content-box;
-  width: inherit;
-  height: inherit;
+  z-index: 1;
   border-width: 0;
   border-color: inherit;
   border-style: solid;
-  background-color: inherit;
+  background-color: transparent;
   border-radius: inherit;
   opacity: 0;
   top: -1px;
@@ -32,7 +29,7 @@
 @keyframes wave {
   0% {
     opacity: 0;
-    border-width: 1px;
+    border-width: -$wave-size;
   }
   20% {
     opacity: .5;
