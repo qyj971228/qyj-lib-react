@@ -75,7 +75,7 @@ const Button: FC<ButtonProps> = (props) => {
     borderColor: color,
     color: getCustomColor(),
     backgroundColor: getCustomBackgroundColor(),
-    filter: disable ? 'brightness(0.7)' : 'brightness(1)'
+    filter: disable ? 'brightness(0.7)' : undefined
   }
 
   const finalStyle = color ? {...customColorStyle, ...style} : {...style}  // props.style is higher priority than props.color
