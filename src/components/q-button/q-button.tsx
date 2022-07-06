@@ -5,7 +5,7 @@ import { ButtonProps } from "./../button/Button";
 
 const QButton: FC<ButtonProps> = (props) => {
 
-  const { children, wave, dashed, simple, kind, ...restProps } = props
+  const { children, wave, dashed, simple, kind, disable, ...restProps } = props
 
   function simpleDashed() {
     if (kind && dashed && !simple) {
@@ -16,12 +16,13 @@ const QButton: FC<ButtonProps> = (props) => {
   }
 
   const Simple = simpleDashed()
-  const composeProps = {...restProps, ...Simple, kind, dashed}
+  
+  const composeProps = {...restProps, ...Simple, kind, dashed, disable}
 
   return (
     <>
-      { wave && <Wave><Button {...composeProps}>{children}</Button></Wave> }
-      { !wave && <Button {...composeProps}>{children}</Button> }
+      { wave && !disable && <Wave><Button {...composeProps}>{children}</Button></Wave> }
+      { (!wave || disable) && <Button {...composeProps}>{children}</Button> }
     </>
   )
   

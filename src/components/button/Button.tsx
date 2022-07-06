@@ -15,6 +15,8 @@ interface buttonPropsBase {
   color?: string,
   ghost?: boolean,
   simple?: boolean,
+  circle?: boolean,
+  disable?: boolean,
   showWave?: Function,
   mouseUp?: Function
 }
@@ -27,7 +29,18 @@ const Button: FC<ButtonProps> = (props) => {
 
   const componentPrefix = 'q-btn'
 
-  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, showWave, onMouseUp, ...restProps } = props
+  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, circle, disable, showWave, onMouseUp, ...restProps } = props
+
+  function getDisable() {
+    if (disable) {
+      if (color) return 'color'
+      if (ghost) return 'ghost'
+      if (simple) return kind + '-simple'
+      if (kind) return kind
+      return 'default'
+    }
+    return ''
+  }
 
   const finalClassName = composeClassNames(
     className, 
@@ -39,7 +52,9 @@ const Button: FC<ButtonProps> = (props) => {
       round: round,  // q-btn-round
       wave: wave,  // q-btn-wave
       ghost: ghost ? kind ? kind : 'default' : '', // q-btn-ghost-[kind]
-      color: color ? true : false  // q-btn-color
+      color: color ? true : false,  // q-btn-color
+      circle: circle ? size ? size : 'default' : '',  // q-btn-circle-[size]
+      disable: getDisable(),  // q-btn-disable-[kind | default | ghost]
     }
   )
 
@@ -59,16 +74,30 @@ const Button: FC<ButtonProps> = (props) => {
   const customColorStyle = {  // from props.color
     borderColor: color,
     color: getCustomColor(),
-    backgroundColor: getCustomBackgroundColor()
+    backgroundColor: getCustomBackgroundColor(),
+    filter: disable ? 'brightness(0.7)' : 'brightness(1)'
   }
 
   const finalStyle = color ? {...customColorStyle, ...style} : {...style}  // props.style is higher priority than props.color
+
+  function getFinalChildren() {
+    if (circle) {
+      if (typeof children === 'string') {
+        return children[0].toLocaleUpperCase()
+      }
+    }
+    return children
+  }
+
+  const finalChildren = getFinalChildren()
 
   return (
     <button 
       {...restProps}
       className={finalClassName}
       style={{...finalStyle}}
+      disabled={disable}
+      onClick={() => {console.log('click')}}
       onMouseUp={
         (e) => {
           onMouseUp && onMouseUp(e)
@@ -76,7 +105,7 @@ const Button: FC<ButtonProps> = (props) => {
         }
       }
     >
-      {children}
+      {finalChildren}
     </button>
   )
 

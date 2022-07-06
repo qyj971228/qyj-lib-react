@@ -1,0 +1,93 @@
+@import '../var-styles/var.scss';
+
+@mixin disable-kind($kind) {
+  cursor: no-drop;
+  color: darken(#fff, 30%);
+  border-color: darken($kind, 30%);
+  background-color: darken($kind, 30%);
+}
+
+@mixin disable-default {
+  cursor: no-drop;
+  color: darken(#fff, 30%);
+  border-color: darken(#fff, 30%);
+  background-color: #fff;
+}
+
+@mixin disable-ghost {
+  cursor: no-drop;
+  color: darken(#fff, 30%);
+  border-color: darken(#fff, 30%);
+  background-color: transparent;
+}
+
+@mixin disable-kind-simple($kind) {
+  cursor: no-drop;
+  color: darken($kind, 30%);
+  border-color: darken($kind, 30%);
+  background-color: darken(#fff, 30%);
+}
+
+@mixin disable-color {
+  cursor: no-drop;
+  color: #fff;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.q-btn-disable {
+  &-primary {
+    @include disable-kind($primary);
+    &:active, &:hover, &:focus {
+      @include disable-kind($primary);
+    }
+    &-simple {
+      @include disable-kind-simple($primary);
+      &:active, &:hover, &:focus {
+        @include disable-kind-simple($primary);
+      }
+    }
+  }
+  &-warn {
+    @include disable-kind($warn);
+    &:active, &:hover, &:focus {
+      @include disable-kind($warn);
+    }
+    &-simple {
+      @include disable-kind-simple($warn);
+      &:active, &:hover, &:focus {
+        @include disable-kind-simple($warn);
+      }
+    }
+  }
+  &-error {
+    @include disable-kind($error);
+    &:active, &:hover, &:focus {
+      @include disable-kind($error);
+    }
+    &-simple {
+      @include disable-kind-simple($error);
+      &:active, &:hover, &:focus {
+        @include disable-kind-simple($error);
+      }
+    }
+  }
+  &-default {
+    @include disable-default;
+    &:active, &:hover, &:focus {
+      @include disable-default;
+    }
+  }
+  &-ghost {
+    @include disable-ghost;
+    &:active, &:hover, &:focus {
+      @include disable-ghost;
+    }
+  }
+  &-color {
+    @include disable-color;
+    &:active, &:hover, &:focus {
+      @include disable-color;
+    }
+  }
+}
