@@ -4,6 +4,7 @@ import './button.css'
 
 type buttonType = 'primary' | 'warn' | 'error'
 type buttonSize = 's' | 'm' | 'l'
+export type theme = 'dark' | ''
 
 interface buttonPropsBase {
   children?: ReactNode,
@@ -18,6 +19,7 @@ interface buttonPropsBase {
   circle?: boolean,
   disable?: boolean,
   text?: boolean,
+  theme?: theme,
   showWave?: Function,
   mouseUp?: Function
 }
@@ -30,18 +32,42 @@ const Button: FC<ButtonProps> = (props) => {
 
   const componentPrefix = 'q-btn'
 
-  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, circle, disable, text, showWave, onMouseUp, ...restProps } = props
+  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, circle, disable, text, theme, showWave, onMouseUp, onClick, ...restProps } = props
 
   function getDisable() {
     if (disable) {
-      if (color) return 'color'
-      if (text && ghost) return 'default-text'
-      if (ghost) return 'ghost'
-      if (text && kind) return kind + '-text'
-      if (simple) return kind + '-simple'
-      if (kind) return kind
-      if (text) return 'default-text'
-      return 'default'
+      if (theme) {
+        if (kind && text) return `${theme}-text-${kind}`
+        if (text) return `${theme}-text-default`
+        if (kind && ghost) return `${theme}-ghost-${kind}`
+        if (kind) return `${theme}-${kind}` 
+        if (ghost) return `${theme}-ghost-default` 
+        return theme + '-default'
+      } else {
+        if (color) return 'color'
+        if (text && ghost) return 'default-text'
+        if (ghost && kind) return kind + '-ghost'
+        if (ghost) return 'ghost'
+        if (text && kind) return kind + '-text'
+        if (simple) return kind + '-simple'
+        if (kind) return kind
+        if (text) return 'default-text'
+        return 'default'
+      }
+    }
+    return ''
+  }
+
+  function getTheme() {
+    if (theme) {
+      if (kind && text && ghost) return `${theme}-${kind}-text`
+      if (!kind && text && ghost) return `${theme}-default-text`
+      if (kind && ghost) return `${theme}-${kind}-ghost`
+      if (kind && text) return `${theme}-${kind}-text`
+      if (kind) return `${theme}-${kind}`
+      if (text) return `${theme}-default-text`
+      if (ghost) return `${theme}-default-ghost`
+      return `${theme}-default`
     }
     return ''
   }
@@ -59,12 +85,15 @@ const Button: FC<ButtonProps> = (props) => {
       color: color ? true : false,  // q-btn-color
       circle: circle ? size ? size : 'default' : '',  // q-btn-circle-[size]
       text: text ? kind ? kind : 'default' : false,  // q-btn-text
-      disable: getDisable(),  // q-btn-disable-[kind | default | ghost]
+      disable: getDisable(),
+      theme: getTheme()
     }
   )
 
   function getCustomColor() {
+    if (theme && !ghost && !text) return '#000'
     if (dashed || text) return color
+    if (kind && ghost) return color
     if (kind) return '#fff'
     return color
   }
@@ -73,6 +102,7 @@ const Button: FC<ButtonProps> = (props) => {
     if (ghost || text) return 'transparent'
     if (dashed) return '#fff'
     if (kind) return color
+    if (theme) return color
     return '#fff'
   }
 
@@ -102,7 +132,12 @@ const Button: FC<ButtonProps> = (props) => {
       className={finalClassName}
       style={{...finalStyle}}
       disabled={disable}
-      onClick={() => {console.log('click')}}
+      onClick={
+        (e) => {
+          console.log('click')
+          onClick && onClick(e)
+        }
+      }
       onMouseUp={
         (e) => {
           onMouseUp && onMouseUp(e)

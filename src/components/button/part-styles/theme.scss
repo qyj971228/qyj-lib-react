@@ -1,13 +1,104 @@
-$light: #fff;
-$dark: rgb(0, 0, 0);
-@mixin theme($theme) {
-  background-color: $theme;
-}
-.q-btn-theme {
-  &-light {
-    @include theme($light);
+@import '../var-styles/var.scss';
+
+@mixin theme-dark-default($theme) {
+  border-color: #fff;
+  background-color: #000;
+  color: #fff;
+  &:hover, &:focus, &:active {
+    background-color: #000;
+    border-color: $theme;
+    color: $theme;
   }
+}
+
+@mixin theme-dark-default-ghost($theme) {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+  &:hover, &:focus, &:active {
+    background-color: transparent;
+    border-color: $theme;
+    color: $theme;
+  }
+}
+
+@mixin theme-dark-kind($theme) {
+  background-color: $theme;
+  border-color: $theme;
+  color: #000;
+  &:hover, &:focus, &:active {
+    background-color: $theme;
+    border-color: $theme;
+    color: #000;
+  }
+}
+
+@mixin theme-dark-kind-ghost($theme) {
+  background-color: transparent;
+  border-color: $theme;
+  color: $theme;
+  &:hover, &:focus, &:active {
+    background-color: transparent;
+    border-color: $theme;
+    color: $theme;
+  }
+}
+
+@mixin theme-dark-kind-text($theme) {
+  color: $theme;
+  &:hover, &:focus, &:active {
+    color: $theme;
+  }
+}
+
+@mixin theme-dark-default-text($theme) {
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+  &:hover, &:focus, &:active {
+    background-color: transparent;
+    border-color: transparent;
+    color: $theme;
+  }
+}
+
+.q-btn-theme {
   &-dark {
-    @include theme($dark);
+    &-primary {
+      @include theme-dark-kind($dark-primary);
+      &-ghost {
+        @include theme-dark-kind-ghost($dark-primary);
+      }
+      &-text {
+        @include theme-dark-kind-text($dark-primary);
+      }
+    }
+    &-warn {
+      @include theme-dark-kind($dark-warn);
+      &-ghost {
+        @include theme-dark-kind-ghost($dark-warn);
+      }
+      &-text {
+        @include theme-dark-kind-text($dark-warn);
+      }
+    }
+    &-error {
+      @include theme-dark-kind($dark-error);
+      &-ghost {
+        @include theme-dark-kind-ghost($dark-error);
+      }
+      &-text {
+        @include theme-dark-kind-text($dark-error);
+      }
+    }
+    &-default {
+      @include theme-dark-default($dark-primary);
+      &-ghost {
+        @include theme-dark-default-ghost($dark-primary);
+      }
+      &-text {
+        @include theme-dark-default-text($dark-primary);
+      }
+    }
   }
 }

@@ -3,6 +3,7 @@ export { default as QButton } from './components/q-button/q-button'
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import QButton from "./components/q-button/q-button";
+import { Dark } from './example/dark';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 const style = {margin: '5px'}
@@ -10,17 +11,21 @@ const style = {margin: '5px'}
 // const style = {margin: '5px', color: 'red'}
 // const style = {margin: '5px', backgroundColor: 'red'}
 // const style = {margin: '5px', borderColor: 'red'}
+
 root.render(
   <StrictMode>
     {/* <div> */}
     <div style={{backgroundColor: 'grey'}}>
+    {/* <div style={{backgroundColor: 'rgba(0, 0, 0, 0.9)'}}> */}
       <QButton style={style}>default</QButton>
       <QButton style={style} disable>disable</QButton>
       <QButton style={style} dashed>dashed</QButton>
+      <QButton style={style} dashed disable>dashed</QButton>
       <br />
       <QButton style={style} ghost>ghost</QButton>
       <QButton style={style} ghost disable>disable</QButton>
       <QButton style={style} dashed ghost>dashed</QButton>
+      <QButton style={style} dashed ghost disable>disable</QButton>
       <br />
       <QButton style={style} round>round</QButton>
       <QButton style={style} round dashed>round</QButton>
@@ -119,6 +124,8 @@ root.render(
       <QButton style={style} color='#8a2be2' round ghost>#8a2be2</QButton>
       <QButton style={style} color='#8a2be2' ghost dashed>#8a2be2</QButton>
       <QButton style={style} color='#8a2be2' round ghost dashed>#8a2be2</QButton>
+      <br />
     </div>
+    <Dark />
   </StrictMode>
 );

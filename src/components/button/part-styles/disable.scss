@@ -54,8 +54,8 @@
 // default
 @mixin disable-default-part {
   @include disable-filter;
-  color: #000;
-  border-color: #000;
+  color: #ccc;
+  border-color: #ccc;
   background-color: #fff;
 }
 @mixin disable-default {
@@ -78,6 +78,21 @@
   @include disable-ghost-part;
   &:active, &:hover, &:focus {
     @include disable-ghost-part;
+  }
+}
+
+// kind-gost
+@mixin disable-kind-ghost-part($kind) {
+  @include disable-filter;
+  color: $kind;
+  border-color: $kind;
+  background-color: transparent;
+}
+@mixin disable-kind-ghost($kind) {
+  cursor: no-drop;
+  @include disable-kind-ghost-part($kind);
+  &:active, &:hover, &:focus {
+    @include disable-kind-ghost-part($kind);
   }
 }
 
@@ -110,6 +125,94 @@
   }
 }
 
+// dark-default
+@mixin disable-dark-default-part {
+  cursor: no-drop;
+  @include disable-default-part;
+  background-color: #000;
+}
+@mixin disable-dark-default {
+  @include disable-dark-default-part;
+  &:active, &:hover, &:focus {
+    @include disable-dark-default-part;
+  }
+}
+
+// dark-kind
+@mixin disable-dark-kind-part($dark-kind) {
+  @include disable-filter;
+  cursor: no-drop;
+  border-color: $dark-kind;
+  background-color: $dark-kind;
+  color: #000;
+}
+@mixin disabe-dark-kind($dark-kind) {
+  @include disable-dark-kind-part($dark-kind);
+  &:active, &:hover, &:focus {
+    @include disable-dark-kind-part($dark-kind);
+  }
+}
+
+// dark-default-ghost
+@mixin disable-dark-default-ghost-part {
+  @include disable-filter;
+  cursor: no-drop;
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+}
+@mixin disabe-dark-default-ghost {
+  @include disable-dark-default-ghost-part;
+  &:active, &:hover, &:focus {
+    @include disable-dark-default-ghost-part;
+  }
+}
+
+// dark-kind-ghost
+@mixin disable-dark-kind-ghost-part($dark-kind) {
+  @include disable-filter;
+  cursor: no-drop;
+  border-color: $dark-kind;
+  background-color: transparent;
+  color: $dark-kind;
+}
+@mixin disabe-dark-kind-ghost($dark-kind) {
+  @include disable-dark-kind-ghost-part($dark-kind);
+  &:active, &:hover, &:focus {
+    @include disable-dark-kind-ghost-part($dark-kind);
+  }
+}
+
+// dark-kind-text
+@mixin disable-dark-kind-text-part($dark-kind) {
+  @include disable-filter;
+  cursor: no-drop;
+  border-color: transparent;
+  background-color: transparent;
+  color: $dark-kind;
+}
+@mixin disabe-dark-kind-text($dark-kind) {
+  @include disable-dark-kind-text-part($dark-kind);
+  &:active, &:hover, &:focus {
+    @include disable-dark-kind-text-part($dark-kind);
+  }
+}
+
+// dark-default-text
+@mixin disable-dark-default-text-part {
+  @include disable-filter;
+  cursor: no-drop;
+  border-color: transparent;
+  background-color: transparent;
+  color: #fff;
+}
+@mixin disabe-dark-default-text {
+  @include disable-dark-default-text-part;
+  &:active, &:hover, &:focus {
+    @include disable-dark-default-text-part;
+  }
+}
+
 .q-btn-disable {
   &-primary {
     @include disable-kind($primary);
@@ -118,6 +221,9 @@
     }
     &-text {
       @include disable-kind-text($primary);
+    }
+    &-ghost {
+      @include disable-kind-ghost($primary);
     }
   }
   &-warn {
@@ -128,6 +234,9 @@
     &-text {
       @include disable-kind-text($warn);
     }
+    &-ghost {
+      @include disable-kind-ghost($warn);
+    }
   }
   &-error {
     @include disable-kind($error);
@@ -136,6 +245,9 @@
     }
     &-text {
       @include disable-kind-text($error);
+    }
+    &-ghost {
+      @include disable-kind-ghost($error);
     }
   }
   &-default {
@@ -149,5 +261,47 @@
   }
   &-color {
     @include disable-color;
+  }
+}
+.q-btn-disable-dark {
+  &-default {
+    @include disable-dark-default;
+  }
+  &-primary {
+    @include disabe-dark-kind($dark-primary);
+  }
+  &-warn {
+    @include disabe-dark-kind($dark-warn);
+  }
+  &-error {
+    @include disabe-dark-kind($dark-error);
+  }
+}
+.q-btn-disable-dark-ghost {
+  &-default {
+    @include disabe-dark-default-ghost;
+  }
+  &-primary {
+    @include disabe-dark-kind-ghost($dark-primary);
+  }
+  &-warn {
+    @include disabe-dark-kind-ghost($dark-warn);
+  }
+  &-error {
+    @include disabe-dark-kind-ghost($dark-error);
+  }
+}
+.q-btn-disable-dark-text {
+  &-default {
+    @include disabe-dark-default-text;
+  }
+  &-primary {
+    @include disabe-dark-kind-text($dark-primary);
+  }
+  &-warn {
+    @include disabe-dark-kind-text($dark-warn);
+  }
+  &-error {
+    @include disabe-dark-kind-text($dark-error);
   }
 }

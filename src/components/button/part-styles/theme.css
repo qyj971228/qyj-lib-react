@@ -1,7 +1,131 @@
-.q-btn-theme-light {
-  background-color: #fff;
+.q-btn-theme-dark-primary {
+  background-color: #8acbec;
+  border-color: #8acbec;
+  color: #000;
 }
 
-.q-btn-theme-dark {
-  background-color: black;
+.q-btn-theme-dark-primary:hover, .q-btn-theme-dark-primary:focus, .q-btn-theme-dark-primary:active {
+  background-color: #8acbec;
+  border-color: #8acbec;
+  color: #000;
+}
+
+.q-btn-theme-dark-primary-ghost {
+  background-color: transparent;
+  border-color: #8acbec;
+  color: #8acbec;
+}
+
+.q-btn-theme-dark-primary-ghost:hover, .q-btn-theme-dark-primary-ghost:focus, .q-btn-theme-dark-primary-ghost:active {
+  background-color: transparent;
+  border-color: #8acbec;
+  color: #8acbec;
+}
+
+.q-btn-theme-dark-primary-text {
+  color: #8acbec;
+}
+
+.q-btn-theme-dark-primary-text:hover, .q-btn-theme-dark-primary-text:focus, .q-btn-theme-dark-primary-text:active {
+  color: #8acbec;
+}
+
+.q-btn-theme-dark-warn {
+  background-color: #f2c97d;
+  border-color: #f2c97d;
+  color: #000;
+}
+
+.q-btn-theme-dark-warn:hover, .q-btn-theme-dark-warn:focus, .q-btn-theme-dark-warn:active {
+  background-color: #f2c97d;
+  border-color: #f2c97d;
+  color: #000;
+}
+
+.q-btn-theme-dark-warn-ghost {
+  background-color: transparent;
+  border-color: #f2c97d;
+  color: #f2c97d;
+}
+
+.q-btn-theme-dark-warn-ghost:hover, .q-btn-theme-dark-warn-ghost:focus, .q-btn-theme-dark-warn-ghost:active {
+  background-color: transparent;
+  border-color: #f2c97d;
+  color: #f2c97d;
+}
+
+.q-btn-theme-dark-warn-text {
+  color: #f2c97d;
+}
+
+.q-btn-theme-dark-warn-text:hover, .q-btn-theme-dark-warn-text:focus, .q-btn-theme-dark-warn-text:active {
+  color: #f2c97d;
+}
+
+.q-btn-theme-dark-error {
+  background-color: #e88080;
+  border-color: #e88080;
+  color: #000;
+}
+
+.q-btn-theme-dark-error:hover, .q-btn-theme-dark-error:focus, .q-btn-theme-dark-error:active {
+  background-color: #e88080;
+  border-color: #e88080;
+  color: #000;
+}
+
+.q-btn-theme-dark-error-ghost {
+  background-color: transparent;
+  border-color: #e88080;
+  color: #e88080;
+}
+
+.q-btn-theme-dark-error-ghost:hover, .q-btn-theme-dark-error-ghost:focus, .q-btn-theme-dark-error-ghost:active {
+  background-color: transparent;
+  border-color: #e88080;
+  color: #e88080;
+}
+
+.q-btn-theme-dark-error-text {
+  color: #e88080;
+}
+
+.q-btn-theme-dark-error-text:hover, .q-btn-theme-dark-error-text:focus, .q-btn-theme-dark-error-text:active {
+  color: #e88080;
+}
+
+.q-btn-theme-dark-default {
+  border-color: #fff;
+  background-color: #000;
+  color: #fff;
+}
+
+.q-btn-theme-dark-default:hover, .q-btn-theme-dark-default:focus, .q-btn-theme-dark-default:active {
+  background-color: #000;
+  border-color: #8acbec;
+  color: #8acbec;
+}
+
+.q-btn-theme-dark-default-ghost {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.q-btn-theme-dark-default-ghost:hover, .q-btn-theme-dark-default-ghost:focus, .q-btn-theme-dark-default-ghost:active {
+  background-color: transparent;
+  border-color: #8acbec;
+  color: #8acbec;
+}
+
+.q-btn-theme-dark-default-text {
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+}
+
+.q-btn-theme-dark-default-text:hover, .q-btn-theme-dark-default-text:focus, .q-btn-theme-dark-default-text:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #8acbec;
 }

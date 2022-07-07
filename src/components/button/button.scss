@@ -1,8 +1,9 @@
+// 类导入顺序决定了类加载顺序
+// 导入基本原则(不一定完全遵守, 具体顺序以实际样式覆盖情形为依据) => default > 带参的props > boolean props
+
 @import './default-style/default.scss';
 
 @import './part-styles/kind.scss';
-
-@import './part-styles/theme.scss';
 
 @import './part-styles/size.scss';
 
@@ -19,5 +20,7 @@
 @import './part-styles/circle.scss';
 
 @import './part-styles/text.scss';
+
+@import './part-styles/theme.scss';
 
 @import './part-styles/disable.scss';
