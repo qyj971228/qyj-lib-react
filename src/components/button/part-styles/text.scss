@@ -1,0 +1,37 @@
+@import '../var-styles/var.scss';
+
+@mixin text-kind($kind) {
+  color: $kind;
+  border-color: transparent;
+  background-color: transparent;
+  &:hover, &:focus {
+    color: lighten($kind, $lighten);
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &:active {
+    color: darken($kind, $darken);
+    border-color: transparent;
+    background-color: transparent;
+  }
+}
+
+.q-btn-text {
+  &-default {
+    border-color: transparent;
+    background-color: transparent;
+    &:hover, &:active, &:focus {
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+  &-primary {
+    @include text-kind($primary)
+  }
+  &-warn {
+    @include text-kind($warn)
+  }
+  &-error {
+    @include text-kind($error)
+  }
+}

@@ -20,7 +20,7 @@ root.render(
       <br />
       <QButton style={style} round>round</QButton>
       <QButton style={style} round dashed>round</QButton>
-      <QButton style={style} round dashed ghost  >ghost</QButton>
+      <QButton style={style} round dashed ghost>ghost</QButton>
       <br />
       <QButton style={style} kind='primary'>primary</QButton>
       <QButton style={style} kind='primary' simple>simple</QButton>
@@ -47,6 +47,18 @@ root.render(
       <QButton style={style} kind='error' disable>disable</QButton>
       <QButton style={style} kind='error' simple disable>disable</QButton>
       <br />
+      <QButton style={style} text>text</QButton>
+      <QButton style={style} kind='primary' text>primary</QButton>
+      <QButton style={style} kind='warn' text>warn</QButton>
+      <QButton style={style} kind='error' text>error</QButton>
+      <QButton style={style} color='#8a2be2' text>#8a2be2</QButton>
+      <br />
+      <QButton style={style} text disable>text</QButton>
+      <QButton style={style} kind='primary' text disable>primary</QButton>
+      <QButton style={style} kind='warn' text disable>warn</QButton>
+      <QButton style={style} kind='error' text disable>error</QButton>
+      <QButton style={style} color='#8a2be2' text disable>#8a2be2</QButton>
+      <br />
       <QButton style={style} kind='primary' size="s">s</QButton>
       <QButton style={style} kind='warn' size="m">m</QButton>
       <QButton style={style} kind='error' size="l">l</QButton>
@@ -71,6 +83,22 @@ root.render(
       <QButton style={style} circle dashed disable>dashed</QButton>
       <QButton style={style} circle ghost disable>ghost</QButton>
       <QButton style={style} circle ghost dashed disable>D</QButton>
+      <br />
+      <QButton style={style} kind='error' color='#8a2be2' circle text>#8a2be2</QButton>
+      <QButton style={style} color='#8a2be2' circle text>#8a2be2</QButton>
+      <QButton style={style} color='#8a2be2' ghost circle text>#8a2be2</QButton>
+      <QButton style={style} circle text>default</QButton>
+      <QButton style={style} circle dashed text>dashed</QButton>
+      <QButton style={style} circle ghost text>ghost</QButton>
+      <QButton style={style} circle ghost dashed text>D</QButton>
+      <br />
+      <QButton style={style} kind='error' color='#8a2be2' circle disable text>#8a2be2</QButton>
+      <QButton style={style} color='#8a2be2' circle disable text>#8a2be2</QButton>
+      <QButton style={style} color='#8a2be2' ghost circle disable text>#8a2be2</QButton>
+      <QButton style={style} circle disable text>default</QButton>
+      <QButton style={style} circle dashed disable text>dashed</QButton>
+      <QButton style={style} circle ghost disable text>ghost</QButton>
+      <QButton style={style} circle ghost dashed disable text>D</QButton>
       <br />
       <QButton style={style} kind='primary' color='#8a2be2'>#8a2be2</QButton>
       <QButton style={style} kind='primary' color='#8a2be2' disable>#8a2be2</QButton>

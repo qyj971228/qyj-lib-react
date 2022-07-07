@@ -17,6 +17,7 @@ interface buttonPropsBase {
   simple?: boolean,
   circle?: boolean,
   disable?: boolean,
+  text?: boolean,
   showWave?: Function,
   mouseUp?: Function
 }
@@ -29,14 +30,17 @@ const Button: FC<ButtonProps> = (props) => {
 
   const componentPrefix = 'q-btn'
 
-  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, circle, disable, showWave, onMouseUp, ...restProps } = props
+  const { className, children, size, kind, dashed, round, wave, color, style, ghost, simple, circle, disable, text, showWave, onMouseUp, ...restProps } = props
 
   function getDisable() {
     if (disable) {
       if (color) return 'color'
+      if (text && ghost) return 'default-text'
       if (ghost) return 'ghost'
+      if (text && kind) return kind + '-text'
       if (simple) return kind + '-simple'
       if (kind) return kind
+      if (text) return 'default-text'
       return 'default'
     }
     return ''
@@ -54,25 +58,26 @@ const Button: FC<ButtonProps> = (props) => {
       ghost: ghost ? kind ? kind : 'default' : '', // q-btn-ghost-[kind]
       color: color ? true : false,  // q-btn-color
       circle: circle ? size ? size : 'default' : '',  // q-btn-circle-[size]
+      text: text ? kind ? kind : 'default' : false,  // q-btn-text
       disable: getDisable(),  // q-btn-disable-[kind | default | ghost]
     }
   )
 
   function getCustomColor() {
-    if (dashed) return color
+    if (dashed || text) return color
     if (kind) return '#fff'
     return color
   }
 
   function getCustomBackgroundColor() {
-    if (ghost) return 'transparent'
+    if (ghost || text) return 'transparent'
     if (dashed) return '#fff'
     if (kind) return color
     return '#fff'
   }
 
   const customColorStyle = {  // from props.color
-    borderColor: color,
+    borderColor: text ? 'transparent' : color,
     color: getCustomColor(),
     backgroundColor: getCustomBackgroundColor(),
     filter: disable ? 'brightness(0.7)' : undefined

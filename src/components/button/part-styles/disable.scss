@@ -1,93 +1,143 @@
 @import '../var-styles/var.scss';
 
-@mixin disable-kind($kind) {
-  cursor: no-drop;
-  color: darken(#fff, 30%);
-  border-color: darken($kind, 30%);
-  background-color: darken($kind, 30%);
-}
-
-@mixin disable-default {
-  cursor: no-drop;
-  color: darken(#fff, 30%);
-  border-color: darken(#fff, 30%);
-  background-color: #fff;
-}
-
-@mixin disable-ghost {
-  cursor: no-drop;
-  color: darken(#fff, 30%);
-  border-color: darken(#fff, 30%);
+// text
+@mixin disable-text {
+  border-color: transparent;
   background-color: transparent;
 }
-
-@mixin disable-kind-simple($kind) {
+// kind-text
+@mixin disable-kind-text-part($kind) {
+  @include disable-text;
+  color: darken($kind, $disable-darken);
+}
+@mixin disable-kind-text($kind) {
   cursor: no-drop;
-  color: darken($kind, 30%);
-  border-color: darken($kind, 30%);
-  background-color: darken(#fff, 30%);
+  @include disable-kind-text-part($kind);
+  &:active, &:hover, &:focus {
+    @include disable-kind-text-part($kind);
+  }
+}
+// default-text
+@mixin disable-default-text-part {
+  @include disable-text;
+  color: darken(#fff, $disable-darken);
+}
+@mixin disable-default-text {
+  cursor: no-drop;
+  @include disable-default-text-part;
+  &:active, &:hover, &:focus {
+    @include disable-default-text-part;
+  }
 }
 
-@mixin disable-color {
+// kind
+@mixin disable-kind-part($kind) {
+  color: darken(#fff, $disable-darken);
+  border-color: darken($kind, $disable-darken);
+  background-color: darken($kind, $disable-darken);
+}
+@mixin disable-kind($kind) {
   cursor: no-drop;
+  @include disable-kind-part($kind);
+  &:active, &:hover, &:focus {
+    @include disable-kind-part($kind);
+  }
+}
+
+// default
+@mixin disable-default-part {
+  color: darken(#fff, $disable-darken);
+  border-color: darken(#fff, $disable-darken);
+  background-color: #fff;
+}
+@mixin disable-default {
+  cursor: no-drop;
+  @include disable-default-part;
+  &:active, &:hover, &:focus {
+    @include disable-default-part;
+  }
+}
+
+// ghost
+@mixin disable-ghost-part {
+  color: darken(#fff, $disable-darken);
+  border-color: darken(#fff, $disable-darken);
+  background-color: transparent;
+}
+@mixin disable-ghost {
+  cursor: no-drop;
+  @include disable-ghost-part;
+  &:active, &:hover, &:focus {
+    @include disable-ghost-part;
+  }
+}
+
+// simple
+@mixin disable-kind-simple-part($kind) {
+  color: darken($kind, $disable-darken);
+  border-color: darken($kind, $disable-darken);
+  background-color: darken(#fff, $disable-darken);
+}
+@mixin disable-kind-simple($kind) {
+  cursor: no-drop;
+  @include disable-kind-simple-part($kind);
+  &:active, &:hover, &:focus {
+    @include disable-kind-simple-part($kind);
+  }
+}
+
+// color
+@mixin disable-color-part {
   color: #fff;
   border-color: #fff;
   background-color: #fff;
+}
+@mixin disable-color {
+  cursor: no-drop;
+  @include disable-color-part;
+  &:active, &:hover, &:focus {
+    @include disable-color-part;
+  }
 }
 
 .q-btn-disable {
   &-primary {
     @include disable-kind($primary);
-    &:active, &:hover, &:focus {
-      @include disable-kind($primary);
-    }
     &-simple {
       @include disable-kind-simple($primary);
-      &:active, &:hover, &:focus {
-        @include disable-kind-simple($primary);
-      }
+    }
+    &-text {
+      @include disable-kind-text($primary);
     }
   }
   &-warn {
     @include disable-kind($warn);
-    &:active, &:hover, &:focus {
-      @include disable-kind($warn);
-    }
     &-simple {
       @include disable-kind-simple($warn);
-      &:active, &:hover, &:focus {
-        @include disable-kind-simple($warn);
-      }
+    }
+    &-text {
+      @include disable-kind-text($warn);
     }
   }
   &-error {
     @include disable-kind($error);
-    &:active, &:hover, &:focus {
-      @include disable-kind($error);
-    }
     &-simple {
       @include disable-kind-simple($error);
-      &:active, &:hover, &:focus {
-        @include disable-kind-simple($error);
-      }
+    }
+    &-text {
+      @include disable-kind-text($error);
     }
   }
   &-default {
     @include disable-default;
-    &:active, &:hover, &:focus {
-      @include disable-default;
+    &-text {
+      @include disable-default-text;
     }
   }
   &-ghost {
     @include disable-ghost;
-    &:active, &:hover, &:focus {
-      @include disable-ghost;
-    }
   }
   &-color {
     @include disable-color;
-    &:active, &:hover, &:focus {
-      @include disable-color;
-    }
   }
 }
