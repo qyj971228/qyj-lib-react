@@ -1,14 +1,20 @@
 @import '../var-styles/var.scss';
 
+// disable-filter
+@mixin disable-filter {
+  filter: brightness(1 - $disable-brightness);
+}
+
 // text
 @mixin disable-text {
+  @include disable-filter;
   border-color: transparent;
   background-color: transparent;
 }
 // kind-text
 @mixin disable-kind-text-part($kind) {
   @include disable-text;
-  color: darken($kind, $disable-darken);
+  color: $kind;
 }
 @mixin disable-kind-text($kind) {
   cursor: no-drop;
@@ -20,7 +26,7 @@
 // default-text
 @mixin disable-default-text-part {
   @include disable-text;
-  color: darken(#fff, $disable-darken);
+  color: #fff;
 }
 @mixin disable-default-text {
   cursor: no-drop;
@@ -32,9 +38,10 @@
 
 // kind
 @mixin disable-kind-part($kind) {
-  color: darken(#fff, $disable-darken);
-  border-color: darken($kind, $disable-darken);
-  background-color: darken($kind, $disable-darken);
+  @include disable-filter;
+  color: #fff;
+  border-color: $kind;
+  background-color: $kind;
 }
 @mixin disable-kind($kind) {
   cursor: no-drop;
@@ -46,8 +53,9 @@
 
 // default
 @mixin disable-default-part {
-  color: darken(#fff, $disable-darken);
-  border-color: darken(#fff, $disable-darken);
+  @include disable-filter;
+  color: #000;
+  border-color: #000;
   background-color: #fff;
 }
 @mixin disable-default {
@@ -60,8 +68,9 @@
 
 // ghost
 @mixin disable-ghost-part {
-  color: darken(#fff, $disable-darken);
-  border-color: darken(#fff, $disable-darken);
+  @include disable-filter;
+  color: #fff;
+  border-color: #fff;
   background-color: transparent;
 }
 @mixin disable-ghost {
@@ -74,9 +83,10 @@
 
 // simple
 @mixin disable-kind-simple-part($kind) {
-  color: darken($kind, $disable-darken);
-  border-color: darken($kind, $disable-darken);
-  background-color: darken(#fff, $disable-darken);
+  @include disable-filter;
+  color:$kind;
+  border-color: $kind;
+  background-color: #fff;
 }
 @mixin disable-kind-simple($kind) {
   cursor: no-drop;

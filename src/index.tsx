@@ -6,6 +6,10 @@ import QButton from "./components/q-button/q-button";
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 const style = {margin: '5px'}
+// const style = {margin: '5px', padding: '10px', width: '100px', height: '100px'}
+// const style = {margin: '5px', color: 'red'}
+// const style = {margin: '5px', backgroundColor: 'red'}
+// const style = {margin: '5px', borderColor: 'red'}
 root.render(
   <StrictMode>
     {/* <div> */}
