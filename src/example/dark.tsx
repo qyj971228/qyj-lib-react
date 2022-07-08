@@ -3,6 +3,7 @@ import QButton from './../components/q-button/q-button';
 import { theme } from "../components/button/Button";
 
 export const Dark: FC = () => {
+  // const style = {margin: '5px', borderWidth: '5px'}
   const style = {margin: '5px'}
   const [btnTheme, setbtnTheme] = useState<theme>('')
   function changeTheme() {
@@ -18,6 +19,12 @@ export const Dark: FC = () => {
         <QButton style={style} kind='warn' theme={btnTheme}>dark</QButton>
         <QButton style={style} kind='error' theme={btnTheme}>dark</QButton>
         <QButton style={style} kind='error' color='#8a2be2' theme={btnTheme}>dark</QButton>
+        <br />
+        <QButton style={style} theme={btnTheme} wave>wave</QButton>
+        <QButton style={style} kind='primary' theme={btnTheme} wave>wave</QButton>
+        <QButton style={style} kind='warn' theme={btnTheme} wave>wave</QButton>
+        <QButton style={style} kind='error' theme={btnTheme} wave>wave</QButton>
+        <QButton style={style} kind='error' color='#8a2be2' theme={btnTheme} wave>wave</QButton>
         <br />
         <QButton style={style} theme={btnTheme} disable>dark</QButton>
         <QButton style={style} kind='primary' theme={btnTheme} disable>dark</QButton>
@@ -36,6 +43,12 @@ export const Dark: FC = () => {
         <QButton style={style} kind='warn' theme={btnTheme} ghost>dark</QButton>
         <QButton style={style} kind='error' theme={btnTheme} ghost>dark</QButton>
         <QButton style={style} kind='error' color='#8a2be2' theme={btnTheme} ghost>dark</QButton>
+        <br />
+        <QButton style={style} theme={btnTheme} ghost wave>wave</QButton>
+        <QButton style={style} kind='primary' theme={btnTheme} ghost wave>wave</QButton>
+        <QButton style={style} kind='warn' theme={btnTheme} ghost wave>wave</QButton>
+        <QButton style={style} kind='error' theme={btnTheme} ghost wave>wave</QButton>
+        <QButton style={style} kind='error' color='#8a2be2' theme={btnTheme} ghost wave>wave</QButton>
         <br />
         <QButton style={style} theme={btnTheme} ghost disable>dark</QButton>
         <QButton style={style} kind='primary' theme={btnTheme} ghost disable>dark</QButton>
