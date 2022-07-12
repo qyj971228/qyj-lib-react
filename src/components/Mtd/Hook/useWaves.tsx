@@ -33,8 +33,8 @@ export function useWaves(btnRef: React.RefObject<HTMLButtonElement>) {
 
   // wave生成
   function getClickPos(e: React.MouseEvent) {
-    let x = e.pageX;
-    let y = e.pageY;
+    let x = e.clientX;
+    let y = e.clientY;
     const rect = btnRef.current?.getBoundingClientRect();
     const size = btnRef.current ? Math.max(btnRef.current.clientHeight, btnRef.current.clientWidth) : 0
     if (rect) {

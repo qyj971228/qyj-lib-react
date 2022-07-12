@@ -3,22 +3,23 @@ import React, { FC } from "react";
 
 interface WaveBaseProps extends HTMLElement {
   waveList?: { top: number; left: number; key: number, size: number}[];
+  color?: string
 }
 
 type WaveProps = Partial<WaveBaseProps>;
 
 const Wave: FC<WaveProps> = (props) => {
 
-  const { waveList } = props;
+  const { waveList, color } = props;
 
   // wave半径大小为元素最大大小两倍
-  const size = waveList ? waveList.length > 0 ? waveList[0].size * 2 : 0 : 0
+  const size = waveList ? waveList.length > 0 ? waveList[0].size * 2 * 1.5 : 0 : 0
 
   const wui = keyframes(`
     0% {
       width: 0;
       height: 0;
-      opacity: 1;
+      opacity: 0.4;
     }
     100% {
       width: ${size}px;
@@ -33,20 +34,17 @@ const Wave: FC<WaveProps> = (props) => {
     left: 50%;
     bottom: 0;
     transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: red;
+    background-color: ${color};
     opacity: 0;
     border-radius: 100%;
     animation: ${wui};
-    animation-duration: .3s;
+    animation-duration: .8s;
     animation-timing-function: ease;
   `);
 
   return (
     <>
       {waveList?.map((wave) => {
-        console.log(wave)
         const style = {
           top: wave.top + "px",
           bottom: "0",
