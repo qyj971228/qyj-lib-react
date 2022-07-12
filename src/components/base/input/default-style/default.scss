@@ -1,0 +1,24 @@
+@import '../var-styles/var.scss';
+
+.q-input-default {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  background-color: #fff;
+  cursor: text;
+  transition: all .3s;
+  outline: none;
+  &:hover {
+    border-color: $primary;
+  }
+  &:focus, &:active {
+    caret-color: $primary;
+    border-color: $primary;
+  }
+}

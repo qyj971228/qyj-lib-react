@@ -15,7 +15,7 @@ const Wave: FC<WaveProps> = (props) => {
   const showWave = () => {
     if (wave) {
       setwave(false)
-      setTimeout(() => {setwave(true), 0})  // 异步设置状态,否则react视作useState不发生改变
+      setTimeout(() => {setwave(true), 0})
     } else {
       setwave(true)
     }

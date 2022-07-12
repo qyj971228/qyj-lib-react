@@ -1,5 +1,6 @@
 .q-btn-default {
   color: black;
+  box-sizing: border-box;
   border-width: 1px;
   border-style: solid;
   border-radius: 2px;
@@ -13,6 +14,7 @@
   cursor: pointer;
   transition: all 0.2s;
   position: relative;
+  overflow: hidden;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -903,4 +905,43 @@
   border-color: transparent;
   background-color: transparent;
   color: #e88080;
+}
+
+.waveMUI {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #2080f0;
+  opacity: 0;
+  border-radius: 100%;
+  animation: wui;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+}
+
+.waveMUI:focus {
+  width: 0;
+  height: 0;
+  opacity: 1;
+  animation: wui;
+  animation-duration: .7s;
+  animation-timing-function: ease;
+}
+
+@keyframes wui {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
 }

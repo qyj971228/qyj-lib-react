@@ -1,3 +1,5 @@
+@import '../../global-styles/var.scss'; 
+
 $q-btn-color: #000;
 $q-btn-font-size: 14px;
 $q-btn-border-width: 1px;
@@ -13,26 +15,3 @@ $q-btn-transition: all .2s;
 $circle-s: 18px;
 $circle-m: 28px;
 $circle-l: 41px;
-
-$primary: #2080f0;
-$warn: #f0a020;
-$error: #d03050;
-
-$dark-primary: #8acbec;
-$dark-warn: #f2c97d;
-$dark-error: #e88080;
-
-$s: 0.5;
-$m: 1;
-$l: 1.5;
-
-$darken: 5%;
-$lighten: 5%;
-$brightness: 0.05;
-
-$disable-darken: 30%;
-$disable-brightness: 0.3;
-
-$wave-size: -3px;
-
-$round: 40px;

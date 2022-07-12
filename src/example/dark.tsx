@@ -1,6 +1,6 @@
 import React, { FC,useState} from "react";
-import QButton from './../components/q-button/q-button';
-import { theme } from "../components/button/Button";
+import QButton from '../components/q-design/q-button/QButton';
+import { theme } from "../components/base/button/Button";
 
 export const Dark: FC = () => {
   // const style = {margin: '5px', borderWidth: '5px'}
@@ -84,6 +84,5 @@ export const Dark: FC = () => {
         <br />
       </div>
     </>
-    
   )
 }

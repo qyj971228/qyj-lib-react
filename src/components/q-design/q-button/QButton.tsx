@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import Button from './../button/Button';
-import Wave from './../wave/wave';
-import { ButtonProps } from "./../button/Button";
+import Wave from "../../base/wave/Wave";
+import Button from '../../base/button/Button';
+import { ButtonProps } from "../../base/button/Button";
 
 const QButton: FC<ButtonProps> = (props) => {
 
@@ -21,7 +21,6 @@ const QButton: FC<ButtonProps> = (props) => {
 
   return (
     <>
-      {/* wave(实验性的特性)在使用时得不到border-width的响应支持, 因此自定义border-width会掩盖直至遮蔽wave */}
       { wave && !disable && <Wave><Button {...composeProps}>{children}</Button></Wave> }
       { (!wave || disable) && <Button {...composeProps}>{children}</Button> }
     </>

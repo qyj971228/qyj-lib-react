@@ -1,5 +1,5 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode} from "react";
-import { composeClassNames } from '../../utils/classCompose'
+import React, { ButtonHTMLAttributes, FC, ReactNode, useEffect, useRef, useState} from "react";
+import { composeClassNames } from '../../../utils/classCompose'
 import './button.css'
 
 type buttonType = 'primary' | 'warn' | 'error'
@@ -126,29 +126,82 @@ const Button: FC<ButtonProps> = (props) => {
 
   const finalChildren = getFinalChildren()
 
+  // 存储wave的数组
+  const [waveList, setwaveList] = useState<{top: number, left: number, key: number}[]>([])
+
+  // 定时删除wave
+  const timer = useRef<NodeJS.Timeout>()
+
+  // 防抖
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setwaveList([])
+    }, 500)
+    if(!timer.current) {
+      timer.current = timeOut
+    } else {
+      clearTimeout(timer.current)
+      timer.current = timeOut
+    }
+    return () => {
+      clearTimeout(timer.current)
+    }
+  }, [waveList])
+
+  // 按钮对象
+  const btnRef = useRef<HTMLButtonElement>(null)
+
+  // wave生成
+  function getClickPos(e: React.MouseEvent) {
+    let x = e.pageX 
+    let y = e.pageY
+    const rect = btnRef?.current?.getBoundingClientRect()
+    if (rect) {
+      const absLeft = x - rect.left
+      const absTop = y - rect.top
+      const wave = {left: absLeft, top: absTop, key: Date.now()}  // wave定位
+      setwaveList([...waveList, wave])
+    }
+  }
+
   return (
-    <button 
-      {...restProps}
-      className={finalClassName}
-      style={{...finalStyle}}
-      disabled={disable}
-      onClick={
-        (e) => {
-          console.log('click')
+    <>
+      <button 
+        ref={btnRef}
+        {...restProps}
+        className={finalClassName}
+        style={{...finalStyle}}
+        disabled={disable}
+        onMouseDown={(e) => {
+          getClickPos(e)
+        }}
+        onClick={(e) => {
+          e.stopPropagation()
           onClick && onClick(e)
-        }
-      }
-      onMouseUp={
-        (e) => {
+        }}
+        onMouseUp={(e) => {
+          e.stopPropagation()
           onMouseUp && onMouseUp(e)
           showWave && showWave()
+        }}
+      >
+        {
+          waveList.map(wave => {
+            const style = {
+              top: wave.top + 'px',
+              bottom: '0',
+              left: wave.left + 'px',
+              right: '0',
+            }
+            return (
+              <div className="waveMUI" key={wave.key} style={style}></div>
+            )
+          })
         }
-      }
-    >
-      {finalChildren}
-    </button>
+        {finalChildren}
+      </button>
+    </>
   )
-
 }
 
 export default Button
