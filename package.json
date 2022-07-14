@@ -1,6 +1,6 @@
 {
   "name": "qyj-lib",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.9.3",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
-    "react": "^18.2.0",
+    "react": "^18.2.0", 
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1"

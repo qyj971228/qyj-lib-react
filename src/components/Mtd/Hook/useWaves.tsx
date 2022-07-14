@@ -16,9 +16,13 @@ export function useWaves(btnRef: React.RefObject<HTMLButtonElement>) {
   // 防抖
   useEffect(() => {
     if (waveList.length !== 0) {
+      if (waveList.length > 5) {
+        setwaveList([]);
+        return;
+      }
       const timeOut = setTimeout(() => {
         setwaveList([]);
-      }, 500);
+      }, 800);
       if (!timer.current) {
         timer.current = timeOut;
       } else {
@@ -36,7 +40,9 @@ export function useWaves(btnRef: React.RefObject<HTMLButtonElement>) {
     let x = e.clientX;
     let y = e.clientY;
     const rect = btnRef.current?.getBoundingClientRect();
-    const size = btnRef.current ? Math.max(btnRef.current.clientHeight, btnRef.current.clientWidth) : 0
+    const size = btnRef.current
+      ? Math.max(btnRef.current.clientHeight, btnRef.current.clientWidth)
+      : 0;
     if (rect) {
       const absLeft = x - rect.left;
       const absTop = y - rect.top;

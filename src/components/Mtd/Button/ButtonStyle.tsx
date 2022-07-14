@@ -18,6 +18,13 @@ export function getButtonKind(kind?: kind) {
         "&:hover": {
           borderColor: kindColor[kind],
           color: "#fff",
+          backgroundColor: '#1560c0',
+        },
+        "&:active": {
+          backgroundColor: kindColor[kind],
+          filter: 'brightness(1.3)',
+          boxShadow:
+          "rgb(0 0 0 / 6%) 0px 4px 2px -2px, rgb(0 0 0 / 24%) 0px 4px 4px 0px, rgb(0 0 0 / 22%) 0px 3px 7px 0px",
         },
       }
     : {};
@@ -53,7 +60,7 @@ export function getButtontheme(theme?: theme) {
     ? {
         filter: `brightness(${themeBrightness[theme]})`,
         "&:hover": {
-          filter: `brightness(${themeBrightness[theme] + 0.2})`,
+          filter: `brightness(${themeBrightness[theme] - 0.2})`,
         },
       }
     : {};
@@ -77,8 +84,11 @@ export const defaultButtonStyles: CSSObject = {
   position: "relative",
   boxShadow:
     "rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px",
+  "&:hover": {
+    filter: "brightness(0.8)",
+  },
   "&:active": {
-    filter: "brightness(1.2)",
+    filter: "brightness(1.3)",
     boxShadow:
     "rgb(0 0 0 / 6%) 0px 4px 2px -2px, rgb(0 0 0 / 24%) 0px 4px 4px 0px, rgb(0 0 0 / 22%) 0px 3px 7px 0px",
   },
