@@ -13,8 +13,8 @@ const root = createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
   <StrictMode>
-    {/* <ButtonGroup />
-    <Dark /> */}
+    <ButtonGroup />
+    <Dark />
     <Button kind='primary'><span></span>Matd</Button>
     <Button kind='warn'>Matd</Button>
     <Button kind='error'>Matd</Button>

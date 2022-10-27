@@ -8,7 +8,7 @@ const DefaultButton = styled.button`
   margin: 0px;
   color: #000;
   background-color: #fff;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 2px;
   cursor: pointer;
   transition: all .2s;
