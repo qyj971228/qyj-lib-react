@@ -1,0 +1,17 @@
+:root {
+  --app-button-radius: 4px;
+  --app-button-color: #000;
+  --app-button-border-color: #000;
+  --app-button-background-color: #fff;
+  --app-button-border-width: 1px;
+  --app-button-border-style: solid;
+}
+
+.button {
+  color: var(--global-color);
+  background-color: var(--app-button-background-color);
+  border-width: var(--app-button-border-width);
+  border-style: var(--app-button-border-style);
+  border-radius: var(--app-button-radius);
+  border-color: var(--app-button-border-color);
+}
