@@ -5,6 +5,9 @@ const config = {
     'src/lib/**/*.{tsx, }',
     '!**/node_modules/**'
   ],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+  }
 };
 
 module.exports = config;
