@@ -29,10 +29,16 @@
     "build-sass": "node-sass ./src -o ./dist --output-style expanded",
     "watch-sass": "node-sass --watch ./src -o ./src --output-style expanded",
     "init-sass": "node-sass ./src -o ./src --output-style expanded",
-    "init-watch-sass": "npm run init-sass && npm run watch-sass"
+    "init-watch-sass": "npm run init-sass && npm run watch-sass",
+    "test": "jest",
+    "test-updatesnapshot": "jest --updateSnapshot",
+    "test-coverage": "jest --coverage"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.21.4",
+    "@types/react-test-renderer": "^18.0.0",
     "node-sass": "^7.0.1",
+    "react-test-renderer": "^18.2.0",
     "sass-loader": "^13.0.2",
     "typescript": "^4.7.4"
   },

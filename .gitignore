@@ -5,3 +5,4 @@
 /.vscode
 /dist
 /node_modules
+/coverage

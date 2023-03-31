@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Hover SnapShot 1`] = `
+<a
+  className="normal"
+  href="http://www.facebook.com"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Facebook
+</a>
+`;
+
+exports[`Link Hover SnapShot 2`] = `
+<a
+  className="normal"
+  href="http://www.google.com"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Google
+</a>
+`;
+
+exports[`Link Hover SnapShot 3`] = `
+<a
+  className="hovered"
+  href="http://www.google.com"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Google
+</a>
+`;
+
+exports[`Link Hover SnapShot 4`] = `
+<a
+  className="normal"
+  href="http://www.google.com"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Google
+</a>
+`;
