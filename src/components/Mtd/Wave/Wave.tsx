@@ -1,19 +1,18 @@
-import { css, keyframes } from "@emotion/css";
-import React, { FC } from "react";
+import { css, keyframes } from '@emotion/css'
+import React, { FC } from 'react'
 
 interface WaveBaseProps extends HTMLElement {
-  waveList?: { top: number; left: number; key: number, size: number}[];
+  waveList?: Array<{ top: number, left: number, key: number, size: number }>
   color?: string
 }
 
-type WaveProps = Partial<WaveBaseProps>;
+type WaveProps = Partial<WaveBaseProps>
 
 const Wave: FC<WaveProps> = (props) => {
-
-  const { waveList, color } = props;
+  const { waveList, color } = props
 
   // wave半径大小为元素最大大小两倍
-  const size = waveList ? waveList.length > 0 ? waveList[0].size * 2 * 1.5 : 0 : 0
+  const size = waveList ? (waveList.length > 0 ? waveList[0].size * 2 * 1.5 : 0) : 0
 
   const wui = keyframes(`
     0% {
@@ -26,7 +25,7 @@ const Wave: FC<WaveProps> = (props) => {
       height: ${size}px;
       opacity: 0;
     }
-  `);
+  `)
   const waveStyles = css(`
     position: absolute;
     top: 50%;
@@ -40,21 +39,21 @@ const Wave: FC<WaveProps> = (props) => {
     animation: ${wui};
     animation-duration: .8s;
     animation-timing-function: ease;
-  `);
+  `)
 
   return (
     <>
       {waveList?.map((wave) => {
         const style = {
-          top: wave.top + "px",
-          bottom: "0",
-          left: wave.left + "px",
-          right: "0",
-        };
-        return <span className={waveStyles} style={style} key={wave.key}></span>;
+          top: wave.top + 'px',
+          bottom: '0',
+          left: wave.left + 'px',
+          right: '0'
+        }
+        return <span className={waveStyles} style={style} key={wave.key}></span>
       })}
     </>
-  );
-};
+  )
+}
 
-export default Wave;
+export default Wave

@@ -19,7 +19,9 @@
 @mixin disable-kind-text($kind) {
   cursor: no-drop;
   @include disable-kind-text-part($kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-kind-text-part($kind);
   }
 }
@@ -31,7 +33,9 @@
 @mixin disable-default-text {
   cursor: no-drop;
   @include disable-default-text-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-default-text-part;
   }
 }
@@ -46,7 +50,9 @@
 @mixin disable-kind($kind) {
   cursor: no-drop;
   @include disable-kind-part($kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-kind-part($kind);
   }
 }
@@ -61,7 +67,9 @@
 @mixin disable-default {
   cursor: no-drop;
   @include disable-default-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-default-part;
   }
 }
@@ -76,7 +84,9 @@
 @mixin disable-ghost {
   cursor: no-drop;
   @include disable-ghost-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-ghost-part;
   }
 }
@@ -91,7 +101,9 @@
 @mixin disable-kind-ghost($kind) {
   cursor: no-drop;
   @include disable-kind-ghost-part($kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-kind-ghost-part($kind);
   }
 }
@@ -99,14 +111,16 @@
 // simple
 @mixin disable-kind-simple-part($kind) {
   @include disable-filter;
-  color:$kind;
+  color: $kind;
   border-color: $kind;
   background-color: #fff;
 }
 @mixin disable-kind-simple($kind) {
   cursor: no-drop;
   @include disable-kind-simple-part($kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-kind-simple-part($kind);
   }
 }
@@ -120,7 +134,9 @@
 @mixin disable-color {
   cursor: no-drop;
   @include disable-color-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-color-part;
   }
 }
@@ -133,7 +149,9 @@
 }
 @mixin disable-dark-default {
   @include disable-dark-default-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-dark-default-part;
   }
 }
@@ -148,7 +166,9 @@
 }
 @mixin disabe-dark-kind($dark-kind) {
   @include disable-dark-kind-part($dark-kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-dark-kind-part($dark-kind);
   }
 }
@@ -163,7 +183,9 @@
 }
 @mixin disabe-dark-default-ghost {
   @include disable-dark-default-ghost-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-dark-default-ghost-part;
   }
 }
@@ -178,7 +200,9 @@
 }
 @mixin disabe-dark-kind-ghost($dark-kind) {
   @include disable-dark-kind-ghost-part($dark-kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-dark-kind-ghost-part($dark-kind);
   }
 }
@@ -193,7 +217,9 @@
 }
 @mixin disabe-dark-kind-text($dark-kind) {
   @include disable-dark-kind-text-part($dark-kind);
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-dark-kind-text-part($dark-kind);
   }
 }
@@ -208,7 +234,9 @@
 }
 @mixin disabe-dark-default-text {
   @include disable-dark-default-text-part;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     @include disable-dark-default-text-part;
   }
 }

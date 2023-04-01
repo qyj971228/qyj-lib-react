@@ -4,7 +4,8 @@
   border-color: $type-color;
   background-color: transparent;
   color: $type-color;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: transparent;
     border-color: lighten($type-color, $lighten);
     color: lighten($type-color, $lighten);

@@ -4,7 +4,8 @@
   color: $kind;
   border-color: transparent;
   background-color: transparent;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: lighten($kind, $lighten);
     border-color: transparent;
     background-color: transparent;
@@ -20,18 +21,20 @@
   &-default {
     border-color: transparent;
     background-color: transparent;
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       border-color: transparent;
       background-color: transparent;
     }
   }
   &-primary {
-    @include text-kind($primary)
+    @include text-kind($primary);
   }
   &-warn {
-    @include text-kind($warn)
+    @include text-kind($warn);
   }
   &-error {
-    @include text-kind($error)
+    @include text-kind($error);
   }
 }

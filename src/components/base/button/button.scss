@@ -40,14 +40,14 @@
   opacity: 0;
   border-radius: 100%;
   animation: wui;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   &:focus {
     width: 0;
     height: 0;
     opacity: 1;
     animation: wui;
-    animation-duration: .7s;
+    animation-duration: 0.7s;
     animation-timing-function: ease;
   }
   // &:active {

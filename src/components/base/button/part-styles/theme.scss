@@ -4,7 +4,9 @@
   border-color: #fff;
   background-color: #000;
   color: #fff;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: #000;
     border-color: $theme;
     color: $theme;
@@ -15,7 +17,9 @@
   border-color: #fff;
   background-color: transparent;
   color: #fff;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: transparent;
     border-color: $theme;
     color: $theme;
@@ -26,7 +30,9 @@
   background-color: $theme;
   border-color: $theme;
   color: #000;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: $theme;
     border-color: $theme;
     color: #000;
@@ -37,7 +43,9 @@
   background-color: transparent;
   border-color: $theme;
   color: $theme;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: transparent;
     border-color: $theme;
     color: $theme;
@@ -46,7 +54,9 @@
 
 @mixin theme-dark-kind-text($theme) {
   color: $theme;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: $theme;
   }
 }
@@ -55,7 +65,9 @@
   background-color: transparent;
   border-color: transparent;
   color: #fff;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: transparent;
     border-color: transparent;
     color: $theme;

@@ -1,4 +1,5 @@
-.q-btn-color:hover, .q-btn-color:focus {
+.q-btn-color:hover,
+.q-btn-color:focus {
   filter: brightness(1.05);
 }
 

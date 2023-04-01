@@ -9,16 +9,15 @@
 
 .q-btn-circle {
   &-default {
-    @include circle($circle-m)
+    @include circle($circle-m);
   }
   &-s {
-    @include circle($circle-s)
+    @include circle($circle-s);
   }
   &-m {
-    @include circle($circle-m)
+    @include circle($circle-m);
   }
   &-l {
-    @include circle($circle-l)
+    @include circle($circle-l);
   }
-  
 }

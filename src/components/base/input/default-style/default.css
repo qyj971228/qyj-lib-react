@@ -10,7 +10,7 @@
   border-radius: 2px;
   background-color: #fff;
   cursor: text;
-  transition: all .3s;
+  transition: all 0.3s;
   outline: none;
 }
 
@@ -18,7 +18,8 @@
   border-color: #2080f0;
 }
 
-.q-input-default:focus, .q-input-default:active {
+.q-input-default:focus,
+.q-input-default:active {
   caret-color: #2080f0;
   border-color: #2080f0;
 }

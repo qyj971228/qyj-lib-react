@@ -4,7 +4,9 @@
   border-color: $type-color;
   background-color: $type-color;
   color: #fff;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: $type-color;
     border-color: $type-color;
     color: #fff;
@@ -15,7 +17,9 @@
   border-color: $type-color;
   background-color: #fff;
   color: $type-color;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: #fff;
     border-color: $type-color;
     color: $type-color;

@@ -12,12 +12,13 @@
   border-radius: 2px;
   background-color: #fff;
   cursor: text;
-  transition: all .3s;
+  transition: all 0.3s;
   outline: none;
   &:hover {
     border-color: $primary;
   }
-  &:focus, &:active {
+  &:focus,
+  &:active {
     caret-color: $primary;
     border-color: $primary;
   }

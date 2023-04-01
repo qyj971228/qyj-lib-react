@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const STATUS = {
   HOVERED: 'hovered',
-  NORMAL: 'normal',
+  NORMAL: 'normal'
 }
 
 export default function Link({ page, children }: any) {

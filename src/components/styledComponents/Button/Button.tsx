@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const DefaultButton = styled.button`
   display: inline-block;
@@ -11,7 +11,7 @@ const DefaultButton = styled.button`
   border: 1px solid transparent;
   border-radius: 2px;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   font-size: 14px;
   text-align: center;
   overflow: hidden;
@@ -24,18 +24,16 @@ const DefaultButton = styled.button`
     filter: brightness(1.3);
     box-shadow: rgb(0 0 0 / 6%) 0px 4px 2px -2px, rgb(0 0 0 / 24%) 0px 4px 4px 0px, rgb(0 0 0 / 22%) 0px 3px 7px 0px;
   }
-`;
+`
 
-export interface DefaultButtonProps extends React.ButtonHTMLAttributes<HTMLElement> {
-  
-}
+export interface DefaultButtonProps extends React.ButtonHTMLAttributes<HTMLElement> {}
 
 const Button: React.FC<DefaultButtonProps> = (props) => {
   return (
     <>
       <DefaultButton>{props.children}</DefaultButton>
     </>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
