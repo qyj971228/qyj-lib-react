@@ -22,11 +22,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run build:clean && npm run build:sass && npm run build:ts",
+    "build": "npm run build:clean && npm run build:sass && npm run build:ts && npm run mini",
     "publish": "npm run build && npm publish",
     "build:clean": "rimraf ./dist",
     "build:ts": "tsc -p tsconfig.build.json",
-    "build:sass": "node-sass ./src -o ./dist --output-style expanded",
+    "mini": "node script/minifyJs.js ",
+    "build:sass": "node-sass ./src -o ./dist --output-style compressed",
     "sass:watch": "node-sass --watch ./src -o ./src --output-style expanded",
     "sass:init": "node-sass ./src -o ./src --output-style expanded",
     "sass:init & watch": "npm run sass:init && npm run sass:watch",
@@ -44,6 +45,7 @@
     "prettier:lib:write": "prettier ./src/lib --write "
   },
   "devDependencies": {
+    "uglify-js": "^3.17.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.4",
