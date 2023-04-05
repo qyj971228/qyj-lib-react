@@ -3,29 +3,37 @@
 const fs = require('fs')
 const sass = require('sass')
 const path = require('path')
-const ROOT_PATH = path.join(__dirname, '../src/lib')
+const ENTRY_PATH = path.join(__dirname, '../src/lib') // 入口
+const MAP_DIRECTORIES = ['\\src\\lib', '\\dist'] // 映射
+const SASS_FILE_NAME = 'index.scss'
+
+function sassCompile (path) {
+  return sass.compile(path, { style: 'compressed' }).css
+}
+
+function pathTransform (path) {
+  return path.replace(...MAP_DIRECTORIES).substring(0, path.length - 7) + 'css' // windows file
+}
+
+function fileWrite (path) {
+  fs.writeFileSync(
+    pathTransform(path),
+    sassCompile(path),
+    'utf-8',
+    function (error) {
+      console.log(error)
+    }
+  )
+}
 
 function readFileList (currentPath) {
   const files = fs.readdirSync(currentPath)
   files.forEach((file) => {
     const childPath = path.join(currentPath, file)
     const stat = fs.statSync(childPath)
-    if (stat.isDirectory()) {
-      readFileList(childPath)
-    } else {
-      if (file === 'index.scss') {
-        const res = sass.compile(childPath, { style: 'compressed' }).css
-        fs.writeFileSync(
-          childPath.replace('\\src\\lib', '\\dist').substring(0, childPath.length - 7) + 'css', // windows file
-          res,
-          'utf-8',
-          function (error) {
-            console.log(error)
-          }
-        )
-      }
-    }
+    if (stat.isDirectory()) readFileList(childPath)
+    else if (file === SASS_FILE_NAME) fileWrite(childPath)
   })
 }
 
-readFileList(ROOT_PATH)
+readFileList(ENTRY_PATH)
