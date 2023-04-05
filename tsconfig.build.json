@@ -10,7 +10,7 @@
     "skipLibCheck": true // 跳过类库检查
   },
   "include": [
-    "src" // 编译文件夹
+    "src/lib/index.ts" // 编译入口, 编译相关文件
   ],
   "exclude": [
     // 排除编译文件
