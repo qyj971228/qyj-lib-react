@@ -10,12 +10,7 @@ module.exports = {
     }
   },
 
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:react/jsx-runtime',
-    'plugin:storybook/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:react/jsx-runtime', 'plugin:storybook/recommended', 'plugin:storybook/recommended'],
   overrides: [],
   parserOptions: {
     project: './tsconfig.json',
@@ -38,17 +33,14 @@ module.exports = {
     // 函数返回
     '@typescript-eslint/explicit-function-return-type': 'off',
     // 布尔值严格比较
-    '@typescript-eslint/strict-boolean-expressions': [
-      'off',
-      {
-        allowString: true,
-        allowNumber: true,
-        allowNullableObject: true,
-        allowNullableBoolean: true,
-        allowNullableNumber: false,
-        allowNullableString: true,
-        allowAny: false
-      }
-    ]
+    '@typescript-eslint/strict-boolean-expressions': ['off', {
+      allowString: true,
+      allowNumber: true,
+      allowNullableObject: true,
+      allowNullableBoolean: true,
+      allowNullableNumber: false,
+      allowNullableString: true,
+      allowAny: false
+    }]
   }
-}
+};
