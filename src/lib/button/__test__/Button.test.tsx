@@ -1,7 +1,7 @@
 import { create, ReactTestRendererJSON } from 'react-test-renderer'
 import { it, expect } from '@jest/globals'
 
-import Button from '../Button'
+import Button from '..'
 
 it('is children correct', () => {
   const component = create(<Button>children</Button>)

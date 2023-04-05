@@ -3,9 +3,7 @@
   background-color: transparent;
 }
 
-.q-btn-text-default:hover,
-.q-btn-text-default:active,
-.q-btn-text-default:focus {
+.q-btn-text-default:hover, .q-btn-text-default:active, .q-btn-text-default:focus {
   border-color: transparent;
   background-color: transparent;
 }
@@ -16,8 +14,7 @@
   background-color: transparent;
 }
 
-.q-btn-text-primary:hover,
-.q-btn-text-primary:focus {
+.q-btn-text-primary:hover, .q-btn-text-primary:focus {
   color: #388ef2;
   border-color: transparent;
   background-color: transparent;
@@ -35,8 +32,7 @@
   background-color: transparent;
 }
 
-.q-btn-text-warn:hover,
-.q-btn-text-warn:focus {
+.q-btn-text-warn:hover, .q-btn-text-warn:focus {
   color: #f2aa38;
   border-color: transparent;
   background-color: transparent;
@@ -54,8 +50,7 @@
   background-color: transparent;
 }
 
-.q-btn-text-error:hover,
-.q-btn-text-error:focus {
+.q-btn-text-error:hover, .q-btn-text-error:focus {
   color: #d54562;
   border-color: transparent;
   background-color: transparent;

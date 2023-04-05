@@ -18,8 +18,7 @@
   border-color: #2080f0;
 }
 
-.q-input-default:focus,
-.q-input-default:active {
+.q-input-default:focus, .q-input-default:active {
   caret-color: #2080f0;
   border-color: #2080f0;
 }

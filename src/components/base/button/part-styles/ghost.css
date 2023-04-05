@@ -4,8 +4,7 @@
   color: #2080f0;
 }
 
-.q-btn-ghost-primary:hover,
-.q-btn-ghost-primary:focus {
+.q-btn-ghost-primary:hover, .q-btn-ghost-primary:focus {
   background-color: transparent;
   border-color: #388ef2;
   color: #388ef2;
@@ -23,8 +22,7 @@
   color: #f0a020;
 }
 
-.q-btn-ghost-warn:hover,
-.q-btn-ghost-warn:focus {
+.q-btn-ghost-warn:hover, .q-btn-ghost-warn:focus {
   background-color: transparent;
   border-color: #f2aa38;
   color: #f2aa38;
@@ -42,8 +40,7 @@
   color: #d03050;
 }
 
-.q-btn-ghost-error:hover,
-.q-btn-ghost-error:focus {
+.q-btn-ghost-error:hover, .q-btn-ghost-error:focus {
   background-color: transparent;
   border-color: #d54562;
   color: #d54562;

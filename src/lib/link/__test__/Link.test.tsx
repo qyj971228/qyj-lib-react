@@ -1,7 +1,7 @@
 import { create, act, ReactTestRendererJSON } from 'react-test-renderer'
 import { it, expect } from '@jest/globals'
 
-import Link from '../Link'
+import Link from '..'
 
 it('Link Hover SnapShot', async () => {
   // create

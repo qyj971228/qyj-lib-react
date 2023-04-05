@@ -23,7 +23,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react'],
-  ignorePatterns: ['./dist', './node_modules', './coverage', '/storybook-static'],
+  ignorePatterns: ['dist', 'node_modules', 'coverage', 'storybook-static'],
   // off: 关闭 error: 显示警告
   rules: {
     'multiline-ternary': 'off',
