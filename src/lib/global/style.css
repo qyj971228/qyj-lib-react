@@ -1,3 +1,4 @@
 :root {
-  --global-color: #000;
+  --app-color-primary: hsl(215, 100%, 54%);
+  --app-color-primary-light-10: hsl(215, 100%, 64%);
 }
