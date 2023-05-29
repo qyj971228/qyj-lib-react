@@ -1,7 +1,3 @@
-@charset "UTF-8";
-/*
-  后导入覆盖前导入
-*/
 .qyj-btn {
   color: var(--app-btn-color);
   background-color: var(--app-btn-background-color);

@@ -7,26 +7,26 @@ const ENTRY_PATH = path.join(__dirname, '../src/lib') // 入口
 const MAP_DIRECTORIES = ['\\src\\lib', '\\dist'] // 映射
 const SASS_FILE_NAME = 'index.scss'
 
-function sassCompile (path) {
+function sassCompile(path) {
   return sass.compile(path, { style: 'compressed' }).css
 }
 
-function pathTransform (path) {
-  return path.replace(...MAP_DIRECTORIES).substring(0, path.length - 7) + 'css' // windows file
+function pathTransform(path) {
+  switch (process.platform) {
+    case 'darwin':
+      return path.replace(...MAP_DIRECTORIES).substring(0, path.length - 4) + 'css' // mac
+    case 'win32':
+      return path.replace(...MAP_DIRECTORIES).substring(0, path.length - 7) + 'css' // windows
+  }
 }
 
-function fileWrite (path) {
-  fs.writeFileSync(
-    pathTransform(path),
-    sassCompile(path),
-    'utf-8',
-    function (error) {
-      console.log(error)
-    }
-  )
+function fileWrite(path) {
+  fs.writeFileSync(pathTransform(path), sassCompile(path), 'utf-8', function (error) {
+    console.log(error)
+  })
 }
 
-function readFileList (currentPath) {
+function readFileList(currentPath) {
   const files = fs.readdirSync(currentPath)
   files.forEach((file) => {
     const childPath = path.join(currentPath, file)
