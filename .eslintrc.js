@@ -43,4 +43,4 @@ module.exports = {
       allowAny: false
     }]
   }
-};
+}
