@@ -3,7 +3,7 @@
 .env
 /.idea
 /.vscode
-/dist
+# /dist
 /node_modules
 /coverage
 /storybook-static

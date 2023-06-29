@@ -1,0 +1,1 @@
+:root{--app-input-border: 1px solid red}.input{border:var(--app-input-border)}
