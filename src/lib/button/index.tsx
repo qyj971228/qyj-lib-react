@@ -2,21 +2,37 @@ import './index.css'
 
 import { ButtonHTMLAttributes } from 'react'
 
-type buttonKind = 'primary' | 'other'
-interface buttonPropsBase {
-  kind: buttonKind
+/* type */
+type ButtonKind = 'primary' | 'warn' | 'error'
+type ButtonSize = 's' | 'm' | 'l'
+interface ButtonPropsBase {
+  kind: ButtonKind
+  size: ButtonSize
 }
-
 type NativeButtonProps = ButtonHTMLAttributes<HTMLElement>
+export type ButtonProps = Partial<NativeButtonProps> & Partial<ButtonPropsBase>
 
-export type ButtonProps = Partial<NativeButtonProps> & Partial<buttonPropsBase>
+const prefix = 'qyj-btn'
+const prefix_ = prefix + '-'
 
-export function Button({ kind, children, ...rest }: ButtonProps) {
+export function Button({ kind, size, children, ...rest }: ButtonProps) {
+  /* class */
   const classList = []
-  kind && classList.push(`qyj-btn-${kind}`)
-  classList.length === 0 && classList.push('qyj-btn')
+
+  /* prefix */
+  classList.push(prefix)
+
+  /* props */
+  // kind
+  kind && classList.push(prefix_ + kind)
+  // size
+  size && classList.push(prefix_ + size)
+
+  /* attributes */
   const className = classList.join(' ')
-  return <button {...{ className, ...rest }}>{children}</button>
+  const attributes = { className, ...rest }
+
+  return <button {...attributes}>{children}</button>
 }
 
 export default Button

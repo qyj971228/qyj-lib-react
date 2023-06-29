@@ -3,12 +3,16 @@
 */
 @import './style/default.scss';
 @import './style/kind.scss';
+@import './style/size.scss';
 
-@import '../global/style.scss';
+@import '../global/variable.scss';
 
 :root {
   --app-btn-radius: 4px;
   --app-btn-color: #000;
+
+  --app-btn-font-size: 16px;
+
   --app-btn-border-color: #000;
   --app-btn-background-color: #fff;
   --app-btn-border-width: 1px;
