@@ -15,6 +15,7 @@ export const Primary: Story = {
   args: {
     children: 'button',
     kind: 'primary',
-    size: 's'
+    size: 's',
+    round: true
   }
 }

@@ -1,3 +1,4 @@
+import Com from '../../../class/Com'
 import './index.css'
 
 import { ButtonHTMLAttributes } from 'react'
@@ -5,38 +6,30 @@ import { ButtonHTMLAttributes } from 'react'
 /* type */
 type ButtonKind = 'primary' | 'warn' | 'error'
 type ButtonSize = 's' | 'm' | 'l'
+type ButtonMode = 'fill' | 'dashed' | 'ghost'
 interface ButtonPropsBase {
   kind: ButtonKind
   size: ButtonSize
   round: boolean
-  // dashed: boolean
-  // ghost: boolean
-  // fullfil: boolean
+  mode: ButtonMode
 }
 type NativeButtonProps = ButtonHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps> & Partial<ButtonPropsBase>
 
-const prefix = 'qyj-btn'
-const _ = prefix + '-'
+export function Button(props: ButtonProps) {
+  const { kind, size, round, mode, children, ...rest } = props
 
-export function Button({ kind, size, round, children, ...rest }: ButtonProps) {
-  /* class */
-  const classList = []
+  const button = new Com('qyj-btn')
 
-  /* prefix */
-  classList.push(prefix)
+  kind && button.pushStyle(kind)
+  size && button.pushStyle(size)
+  round && button.pushStyle('round')
+  mode && button.pushStyle(mode)
 
-  /* props */
-  // kind
-  kind && classList.push(_ + kind)
-  // size
-  size && classList.push(_ + size)
-  // round
-  round && classList.push(_ + 'round')
-
-  /* attributes */
-  const className = classList.join(' ')
-  const attributes = { className, ...rest }
+  const attributes = {
+    className: button.className(),
+    ...rest
+  }
 
   return <button {...attributes}>{children}</button>
 }
