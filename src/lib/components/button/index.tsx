@@ -8,14 +8,18 @@ type ButtonSize = 's' | 'm' | 'l'
 interface ButtonPropsBase {
   kind: ButtonKind
   size: ButtonSize
+  round: boolean
+  // dashed: boolean
+  // ghost: boolean
+  // fullfil: boolean
 }
 type NativeButtonProps = ButtonHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps> & Partial<ButtonPropsBase>
 
 const prefix = 'qyj-btn'
-const prefix_ = prefix + '-'
+const _ = prefix + '-'
 
-export function Button({ kind, size, children, ...rest }: ButtonProps) {
+export function Button({ kind, size, round, children, ...rest }: ButtonProps) {
   /* class */
   const classList = []
 
@@ -24,9 +28,11 @@ export function Button({ kind, size, children, ...rest }: ButtonProps) {
 
   /* props */
   // kind
-  kind && classList.push(prefix_ + kind)
+  kind && classList.push(_ + kind)
   // size
-  size && classList.push(prefix_ + size)
+  size && classList.push(_ + size)
+  // round
+  round && classList.push(_ + 'round')
 
   /* attributes */
   const className = classList.join(' ')
