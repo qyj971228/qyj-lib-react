@@ -15,7 +15,7 @@ function pathTransform (path) {
     case 'darwin':
       return path.replace('/src/lib', '/dist').substring(0, path.length - 7) + 'css' // mac
     case 'win32':
-      return path.replace('\\src/lib', '\\dist').substring(0, path.length - 7) + 'css' // windows
+      return path.replace('\\src\\lib', '\\dist').substring(0, path.length - 7) + 'css' // windows
   }
 }
 
