@@ -1,4 +1,4 @@
-import Com from '../../../class/Com'
+import Com from '../../class/Com'
 import './index.css'
 
 import { ButtonHTMLAttributes } from 'react'

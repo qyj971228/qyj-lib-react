@@ -1,0 +1,1 @@
+var Com=function(){function t(t,s){void 0===s&&(s="-"),this.prefix=t,this.styleConnector=s,this.classList=[t],this._=t+s}return t.prototype.pushStyle=function(t){this.classList.push(this._+t)},t.prototype.className=function(){return this.classList.join(" ")},t}();export default Com;
