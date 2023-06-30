@@ -1,19 +1,20 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 // import { Button, Input } from 'qyj-lib'
 
-export { default as QButton } from './components/q-design/q-button/QButton'
-export { default as MButton } from './components/Mtd/Button/Button'
-export { default as StyledButton } from './components/styledComponents/Button/Button'
-export { default as Button } from './lib/button/index'
-export { default as Input } from './lib/input/index'
+// export { default as QButton } from './components/q-design/q-button/QButton'
+// export { default as MButton } from './components/Mtd/Button/Button'
+// export { default as StyledButton } from './components/styledComponents/Button/Button'
+// export { default as Button } from './lib/components/button/index'
+// export { default as Input } from './lib/components/button/index'
 
-// const root = createRoot(document.getElementById('root') as HTMLElement)
+import { styles, Button } from './lib'
 
-// root.render(
-//   <StrictMode>
-//     <Button>hello</Button>
-//     <Input></Input>
-//     <hr />
-//   </StrictMode>
-// )
+const root = createRoot(document.getElementById('root') as HTMLElement)
+
+root.render(
+  <StrictMode>
+    <Button kind='primary' size='l'>hello</Button>
+    <hr />
+  </StrictMode>
+)

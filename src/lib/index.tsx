@@ -1,5 +1,7 @@
-import Input from './input/index'
-import Link from './link/index'
-import Button from './button/index'
+import Input from './components/input/index'
+import Link from './components/link/index'
+import Button from './components/button/index'
+// @ts-ignore
+import styles from './index.css'
 
-export { Input, Link, Button }
+export { Input, Link, Button, styles }

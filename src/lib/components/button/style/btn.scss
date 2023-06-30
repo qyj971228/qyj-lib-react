@@ -1,9 +1,17 @@
 .qyj-btn {
+  --app-btn-color: #000;
+  --app-btn-background-color: #fff;
+  --app-btn-font-size: 16px;
+  --app-btn-border-color: #000;
+  --app-btn-border-width: 1px;
+  --app-btn-border-style: solid;
+  --app-btn-border-radius: 4px;
+
   color: var(--app-btn-color);
   background-color: var(--app-btn-background-color);
   font-size: var(--app-btn-font-size);
   border-width: var(--app-btn-border-width);
   border-style: var(--app-btn-border-style);
-  border-radius: var(--app-btn-radius);
+  border-radius: var(--app-btn-border-radius);
   border-color: var(--app-btn-border-color);
 }

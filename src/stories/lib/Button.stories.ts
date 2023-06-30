@@ -1,4 +1,4 @@
-import { Button } from '../../lib/button'
+import { styles, Button } from '../../lib'
 
 import type { Meta, StoryObj } from '@storybook/react'
 

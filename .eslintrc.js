@@ -21,6 +21,9 @@ module.exports = {
   ignorePatterns: ['dist', 'node_modules', 'coverage', 'storybook-static'],
   // off: 关闭 error: 显示警告
   rules: {
+    // ts ignore
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/prefer-ts-expect-error': 'off',
     'multiline-ternary': 'off',
     // 函数括号前插入空格
     '@typescript-eslint/space-before-function-paren': 'off',
