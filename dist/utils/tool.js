@@ -1,0 +1,1 @@
+var strPlus=function(){for(var r=[],e=0;e<arguments.length;e++)r[e]=arguments[e];return r.reduce(function(r,e){return r+e})},arrFindReplace=function(r,e,n){e=r.indexOf(e);e<=-1||0<=e&&(void 0!==n?r.splice(e,1,n):r.splice(e,1))};export{strPlus,arrFindReplace};

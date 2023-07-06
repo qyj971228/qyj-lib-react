@@ -1,5 +1,11 @@
-.qyj-btn-primary {
+.qyj-btn-normal {
   color: var(--app-color-primary);
+  border-color: var(--app-color-primary);
+}
+
+.qyj-btn-primary-normal {
+  color: #fff;
+  background-color: var(--app-color-primary);
   border-color: var(--app-color-primary);
 }
 
@@ -8,7 +14,19 @@
   border-color: var(--app-color-warn);
 }
 
+.qyj-btn-primary-warn {
+  color: #fff;
+  background-color: var(--app-color-warn);
+  border-color: var(--app-color-warn);
+}
+
 .qyj-btn-error {
   color: var(--app-color-error);
+  border-color: var(--app-color-error);
+}
+
+.qyj-btn-primary-error {
+  color: #fff;
+  background-color: var(--app-color-error);
   border-color: var(--app-color-error);
 }

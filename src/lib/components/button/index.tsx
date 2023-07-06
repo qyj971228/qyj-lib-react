@@ -3,31 +3,36 @@ import './index.css'
 
 import { ButtonHTMLAttributes } from 'react'
 
-/* type */
-type ButtonKind = 'primary' | 'warn' | 'error'
+export const BUTTON_KIND = ['normal', 'warn', 'error']
+export const SELECTIVITY = ['dashed', 'ghost']
+type ButtonKind = 'normal' | 'warn' | 'error'
 type ButtonSize = 's' | 'm' | 'l'
-type ButtonMode = 'fill' | 'dashed' | 'ghost'
+export type ButtonWeight = 'primary'
 interface ButtonPropsBase {
   kind: ButtonKind
   size: ButtonSize
   round: boolean
-  mode: ButtonMode
+  dashed: boolean
+  ghost: boolean
+  weight: ButtonWeight
 }
 type NativeButtonProps = ButtonHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps> & Partial<ButtonPropsBase>
 
 export function Button(props: ButtonProps) {
-  const { kind, size, round, mode, children, ...rest } = props
+  const { kind, size, round, dashed, ghost, weight, children, ...rest } = props
 
   const button = new Com('qyj-btn')
 
   kind && button.pushStyle(kind)
   size && button.pushStyle(size)
   round && button.pushStyle('round')
-  mode && button.pushStyle(mode)
+  dashed && button.pushStyle('dashed')
+  ghost && button.pushStyle('ghost')
+  weight && button.setWeight(weight)
 
   const attributes = {
-    className: button.className(),
+    className: button.getClassName(),
     ...rest
   }
 
