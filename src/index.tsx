@@ -14,7 +14,7 @@ const root = createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <StrictMode>
-    <Button kind='primary' size='l'>hello</Button>
+    <Button weight='primary' size='l'>hello</Button>
     <hr />
   </StrictMode>
 )

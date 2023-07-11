@@ -1,0 +1,1 @@
+var PREFIX="qyj-btn",BUTTONKIND=["normal","warn","error"],SELECTIVITY=["dashed","ghost"],ROUND="round",DASHED="dashed",GHOST="ghost";export{PREFIX,BUTTONKIND,SELECTIVITY,ROUND,DASHED,GHOST};

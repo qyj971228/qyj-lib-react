@@ -1,38 +1,21 @@
-import Com from '../../class/Com'
 import './index.css'
-
-import { ButtonHTMLAttributes } from 'react'
-
-export const BUTTON_KIND = ['normal', 'warn', 'error']
-export const SELECTIVITY = ['dashed', 'ghost']
-type ButtonKind = 'normal' | 'warn' | 'error'
-type ButtonSize = 's' | 'm' | 'l'
-export type ButtonWeight = 'primary'
-interface ButtonPropsBase {
-  kind: ButtonKind
-  size: ButtonSize
-  round: boolean
-  dashed: boolean
-  ghost: boolean
-  weight: ButtonWeight
-}
-type NativeButtonProps = ButtonHTMLAttributes<HTMLElement>
-export type ButtonProps = Partial<NativeButtonProps> & Partial<ButtonPropsBase>
+import ButtonClass from './class/ButtonClass'
+import ButtonProps, { DASHED, GHOST, PREFIX, ROUND } from './type/props'
 
 export function Button(props: ButtonProps) {
-  const { kind, size, round, dashed, ghost, weight, children, ...rest } = props
+  const { kind, size, round, dashed, ghost, weight, children, className, ...rest } = props
 
-  const button = new Com('qyj-btn')
+  const button = new ButtonClass(PREFIX)
 
-  kind && button.pushStyle(kind)
-  size && button.pushStyle(size)
-  round && button.pushStyle('round')
-  dashed && button.pushStyle('dashed')
-  ghost && button.pushStyle('ghost')
+  kind && button.setProp(kind)
+  size && button.setProp(size)
+  round && button.setProp(ROUND)
+  dashed && button.setProp(DASHED)
+  ghost && button.setProp(GHOST)
   weight && button.setWeight(weight)
 
   const attributes = {
-    className: button.getClassName(),
+    className: button.getClassName(className),
     ...rest
   }
 
@@ -40,5 +23,3 @@ export function Button(props: ButtonProps) {
 }
 
 export default Button
-
-// node.addeventlistener('animationed')
