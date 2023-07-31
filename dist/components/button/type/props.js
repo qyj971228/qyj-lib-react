@@ -1,1 +1,1 @@
-var PREFIX="qyj-btn",BUTTONKIND=["normal","warn","error"],SELECTIVITY=["dashed","ghost"],ROUND="round",DASHED="dashed",GHOST="ghost";export{PREFIX,BUTTONKIND,SELECTIVITY,ROUND,DASHED,GHOST};
+var PREFIX="qyj-btn",KIND=["normal","warn","error"],SIZE=["s","m","l"],WEIGHT_EFFECT=["dashed","ghost"],WEIGHT=["primary"],ROUND="round",DASHED="dashed",GHOST="ghost",BOOLEAN_PROP=[ROUND,DASHED,GHOST];export{PREFIX,KIND,WEIGHT_EFFECT,ROUND,DASHED,GHOST,BOOLEAN_PROP};

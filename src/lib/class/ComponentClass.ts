@@ -1,7 +1,9 @@
-class Component {
-  constructor(prefix: string) {
+class Component<T extends object> {
+  constructor(prefix: string, props: T, booleanProp: string[]) {
     this.classList = [prefix]
     this.prefix = prefix
+    this.setStrProps<T>(props)
+    this.setBoolProps<T>(props, booleanProp)
   }
 
   public readonly _ = '-'
@@ -9,8 +11,28 @@ class Component {
   public readonly suffixs: string[] = []
   public readonly classList: string[]
 
-  public setProp(prop: string) {
+  public setProp(prop: string | undefined) {
+    if (prop === undefined) return
     this.suffixs.push(prop)
+  }
+
+  public setPropByBoolean(prop: boolean | undefined, val: string) {
+    if (prop === undefined) return
+    if (prop) this.suffixs.push(val)
+  }
+
+  public setStrProps<T extends object>(props: T) {
+    Object.keys(props).forEach(key => {
+      const value = props[key as keyof T]
+      if (typeof value === 'string') this.setProp(value)
+    })
+  }
+
+  public setBoolProps<T>(props: T, booleanProps: string[]) {
+    booleanProps.forEach(key => {
+      const value = props[key as keyof T]
+      if (value === true) this.setProp(key)
+    })
   }
 
   public getComponentClassName() {

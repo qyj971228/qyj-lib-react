@@ -1,24 +1,35 @@
 import { ButtonHTMLAttributes } from 'react'
+const PREFIX = 'qyj-btn'
+const KIND = ['normal', 'warn', 'error'] as const
+const SIZE = ['s', 'm', 'l'] as const
 
-type ButtonWeight = 'primary'
-type ButtonKind = 'normal' | 'warn' | 'error'
-type ButtonSize = 's' | 'm' | 'l'
+const WEIGHT_EFFECT = ['dashed', 'ghost'] as const // 被weight影响的
+const WEIGHT = ['primary'] as const
 
-interface ButtonPropsBase {
-  kind: ButtonKind
-  size: ButtonSize
+const ROUND = 'round'
+const DASHED = 'dashed'
+const GHOST = 'ghost'
+
+const BOOLEAN_PROP = [ROUND, DASHED, GHOST] // 布尔型
+
+type Kind = (typeof KIND)[number] | undefined
+type Size = (typeof SIZE)[number]
+type Weight = (typeof WEIGHT)[number]
+
+type ButtonPropsBase = Partial<{
+  kind: Kind
+  size: Size
   round: boolean
   dashed: boolean
   ghost: boolean
-  weight: ButtonWeight
-}
-type NativeButtonProps = ButtonHTMLAttributes<HTMLElement>
-type ButtonProps = Partial<NativeButtonProps> & Partial<ButtonPropsBase>
+  weight: Weight
+}>
+
+type NativeButtonProps = Partial<ButtonHTMLAttributes<HTMLElement>>
+type ButtonProps = NativeButtonProps & ButtonPropsBase
 
 export default ButtonProps
-export const PREFIX = 'qyj-btn'
-export const BUTTONKIND = ['normal', 'warn', 'error']
-export const SELECTIVITY = ['dashed', 'ghost']
-export const ROUND = 'round'
-export const DASHED = 'dashed'
-export const GHOST = 'ghost'
+
+export { PREFIX, KIND, WEIGHT_EFFECT, ROUND, DASHED, GHOST, BOOLEAN_PROP }
+
+export type { Kind, Weight, ButtonPropsBase }

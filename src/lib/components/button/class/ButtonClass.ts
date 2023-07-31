@@ -1,22 +1,25 @@
-import ComponentsClass from "../../../class/ComponentClass"
-import { arrFindReplace } from "../../../utils/tool"
-import { BUTTONKIND, SELECTIVITY } from "../type/props"
+import Component from "../../../class/ComponentClass"
+import { PREFIX, ButtonPropsBase, BOOLEAN_PROP, Weight, KIND, WEIGHT_EFFECT } from "../type/props"
+import { arrDel, arrReplace } from "../../../utils/tool"
 
-class Button extends ComponentsClass {
-  public setWeight(weight: string) {
-    let kind = ''
-    BUTTONKIND.forEach(el => {
-      if (this.suffixs.includes(el)) kind = el
-    })
-    // 给予默认primary样式
-    if (!BUTTONKIND.includes(kind)) {
-      this.suffixs.push(weight + this._ + BUTTONKIND[0])
-      return
+class Button extends Component<ButtonPropsBase> {
+  constructor(props: ButtonPropsBase) {
+    super(PREFIX, props, BOOLEAN_PROP)
+    this.setButtonWeight(props.weight)
+  }
+
+  private setButtonWeight(weight: Weight | undefined) {
+    if (weight === undefined) return
+
+    arrDel(this.suffixs, weight) // 移除setStringProps时额外添加的weight
+    const kind = KIND.find(el => this.suffixs.includes(el))
+
+    if (kind) {
+      arrReplace(this.suffixs, kind, `${weight}${this._}${kind}`) // 使用对应primary替换kind颜色样式
+      WEIGHT_EFFECT.forEach(effect => { arrDel(this.suffixs, effect) }) // 移除遮蔽样式
+    } else {
+      this.suffixs.push(`${weight}${this._}${KIND[0]}`) // 给予默认normal-primary样式
     }
-    // 使用primary替换kind颜色样式
-    arrFindReplace(this.suffixs, kind, weight + this._ + kind)
-    // 使用primary时移除其他可选样式
-    SELECTIVITY.forEach(selectivity => { arrFindReplace(this.suffixs, selectivity) })
   }
 }
 export default Button

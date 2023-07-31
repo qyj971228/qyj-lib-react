@@ -1,1 +1,1 @@
-var strPlus=function(){for(var r=[],e=0;e<arguments.length;e++)r[e]=arguments[e];return r.reduce(function(r,e){return r+e})},arrFindReplace=function(r,e,n){e=r.indexOf(e);e<=-1||0<=e&&(void 0!==n?r.splice(e,1,n):r.splice(e,1))};export{strPlus,arrFindReplace};
+var arrDel=function(e,r){r=e.indexOf(r);r<=-1||0<=r&&e.splice(r,1)},arrReplace=function(e,r,a){r=e.indexOf(r);r<=-1||0<=r&&e.splice(r,1,a)};export{arrDel,arrReplace};
