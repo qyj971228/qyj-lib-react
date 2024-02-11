@@ -3,17 +3,14 @@
 
 # Build
 `npm run build`
-## Build CSS
+## CSS
 `npm run build:sass`
-
-## Build TS
+## TS
 `npm run build:ts`
 
-# Test
 ## Test Run
 `npm run test`
-
-## Test Coverage
+## Coverage
 `npm run test-coverage`
 
 # Storybook
